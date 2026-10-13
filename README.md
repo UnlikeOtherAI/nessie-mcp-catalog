@@ -49,7 +49,7 @@ pnpm check
 
 `pnpm build` regenerates normalized observations, report and publication from retained inputs and editorial files. `pnpm schema` regenerates JSON schemas from the wire contract. `pnpm refresh` fetches reviewed sources and prepares a new complete publication; it does not publish to GitHub. A maintainer can use `pnpm refresh --force` to include the weekly source outside Tuesday. GitHub API authentication is optional for local refresh; provide a short-lived `GH_TOKEN` only in the process environment if rate limits require it.
 
-The [refresh workflow](.github/workflows/refresh.yml) runs daily at 03:17 UTC and supports manual dispatch. It creates or updates a generated-data-only PR, explicitly dispatches the read-only validator on that exact head, and merges only after that check succeeds and the base is unchanged. See [operations and limits](docs/operations.md) for repository setup, recovery and rollback; [contributing](CONTRIBUTING.md) for curation.
+The [refresh workflow](.github/workflows/refresh.yml) runs daily at 03:17 UTC and supports manual dispatch. It creates or updates a generated-data-only PR, explicitly dispatches the read-only validator on that exact head, and verifies GitHub's separate required PR check. When the unchanged bot validator awaits approval, the trusted-main publisher requests approval for that exact run after checking its repository, identity and generated-only diff. It merges only when both validations and every required check pass and the base is unchanged. See [operations and limits](docs/operations.md) for repository setup, recovery and rollback; [contributing](CONTRIBUTING.md) for curation.
 
 ## Licensing
 
