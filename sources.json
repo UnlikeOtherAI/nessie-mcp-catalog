@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    { "id": "official-registry", "kind": "registry", "url": "https://registry.modelcontextprotocol.io/v0.1/servers", "license": "CC0-1.0", "cadenceHours": 24, "maxBytes": 8388608 },
+    { "id": "punkpeye", "kind": "markdown", "repo": "punkpeye/awesome-mcp-servers", "repositoryId": 896335270, "path": "README.md", "license": "MIT", "cadenceHours": 24, "maxBytes": 8388608 },
+    { "id": "wong2", "kind": "markdown", "repo": "wong2/awesome-mcp-servers", "repositoryId": 895553015, "path": "README.md", "license": "MIT", "cadenceHours": 168, "maxBytes": 8388608 },
+    { "id": "punkpeye-remote", "kind": "markdown", "repo": "punkpeye/awesome-remote-mcp-servers", "repositoryId": 1360778208, "path": "README.md", "license": "MIT", "cadenceHours": 24, "maxBytes": 8388608 },
+    { "id": "jaw9c-remote", "kind": "markdown", "repo": "jaw9c/awesome-remote-mcp-servers", "path": "README.md", "license": "MIT", "cadenceHours": 24, "maxBytes": 8388608 },
+    { "id": "tensorblock", "kind": "tensorblock", "repo": "TensorBlock/awesome-mcp-servers", "repositoryId": 960225366, "path": "data/catalog.json", "license": "MIT", "cadenceHours": 24, "maxBytes": 16777216 }
+  ]
+}
