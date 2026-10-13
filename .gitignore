@@ -1,0 +1,7 @@
+node_modules/
+.worktrees/
+.staging/
+*.log
+.env
+.env.*
+coverage/
