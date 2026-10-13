@@ -13,7 +13,7 @@
     },
     "entries": {
       "minItems": 1,
-      "maxItems": 20000,
+      "maxItems": 100000,
       "type": "array",
       "items": {
         "type": "object",

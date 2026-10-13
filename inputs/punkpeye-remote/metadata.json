@@ -1,0 +1,13 @@
+{
+  "repository": "punkpeye/awesome-remote-mcp-servers",
+  "repositoryId": 1360778208,
+  "stars": 1160,
+  "defaultBranch": "main",
+  "commit": "325234c8091c265e059e3196965a6cb8a38f0d13",
+  "committedAt": "2026-10-09T19:18:53Z",
+  "fetchedAt": "2026-10-13T18:52:45.391Z",
+  "license": "MIT",
+  "licenseDigest": "2e89c3971c70788d1f6df0b62ac8446b67066c34a07f6aad546965dba9d5df5d",
+  "inputPath": "README.md",
+  "sanitation": "Credential values and executable defaults removed before persistence; snapshot hash covers sanitized bytes."
+}

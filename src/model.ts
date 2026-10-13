@@ -15,9 +15,10 @@ export const ObservationSchema = z.strictObject({
   identity: IdentitySchema.nullable(), metadata: MetadataSchema,
   remotes: z.array(RemoteSchema).max(30), packages: z.array(PackageSchema).max(30),
   lifecycle: z.enum(['active', 'deprecated', 'withdrawn']),
+  selected: z.boolean(),
   links: z.array(PublicUrl).max(30), unresolvedReason: z.string().max(200).nullable(),
 })
-export const ObservationsSchema = z.array(ObservationSchema).max(20_000)
+export const ObservationsSchema = z.array(ObservationSchema).max(100_000)
 export const LockSchema = z.strictObject({ schemaVersion: z.literal(1), snapshots: z.array(SnapshotSchema).max(20) })
 export const BindingSchema = z.strictObject({
   sourceId: z.string(), nativeId: z.string(), identity: IdentitySchema,
@@ -26,6 +27,7 @@ export const BindingSchema = z.strictObject({
 export const IdentityMapSchema = z.strictObject({ schemaVersion: z.literal(1), bindings: z.array(BindingSchema).max(10_000) })
 export const CurationEntrySchema = z.strictObject({
   id: z.string(), identity: IdentitySchema,
+  legacyLibraryKey: z.string().max(100).nullable().default(null),
   metadata: MetadataSchema.partial(), remotes: z.array(RemoteSchema).max(30).optional(),
   packages: z.array(PackageSchema).max(30).optional(),
   lifecycle: z.enum(['active', 'deprecated', 'withdrawn']).optional(),

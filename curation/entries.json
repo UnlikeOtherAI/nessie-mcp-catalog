@@ -1,0 +1,656 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "id": "registry:com.notion/mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "com.notion/mcp"
+      },
+      "metadata": {
+        "name": "notion",
+        "displayName": "Notion",
+        "description": "Search, read, create and update pages and databases in your Notion workspace.",
+        "vendor": "Notion",
+        "websiteUrl": null,
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.notion.com/docs/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.notion.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Notion account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.notion.com/docs/mcp",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "notion"
+    },
+    {
+      "id": "registry:app.linear/linear",
+      "identity": {
+        "kind": "registry",
+        "name": "app.linear/linear"
+      },
+      "metadata": {
+        "name": "linear",
+        "displayName": "Linear",
+        "description": "Create and update issues, projects and comments in Linear.",
+        "vendor": "Linear",
+        "websiteUrl": null,
+        "repositoryUrl": null,
+        "documentationUrl": "https://linear.app/docs/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.linear.app/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Linear account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://linear.app/docs/mcp",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "linear"
+    },
+    {
+      "id": "registry:io.github.getsentry/sentry-mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.getsentry/sentry-mcp"
+      },
+      "metadata": {
+        "name": "sentry",
+        "displayName": "Sentry",
+        "description": "Query issues, events and projects in Sentry.",
+        "vendor": "Sentry",
+        "websiteUrl": null,
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.sentry.io/product/sentry-mcp/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.sentry.dev/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Sentry account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.sentry.io/product/sentry-mcp/",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "sentry"
+    },
+    {
+      "id": "remote:5861f2d719563becc43c9876242aeaaf",
+      "identity": {
+        "kind": "remote",
+        "providerId": "atlassian.com",
+        "component": "atlassian"
+      },
+      "metadata": {
+        "name": "atlassian",
+        "displayName": "Atlassian (Jira & Confluence)",
+        "description": "Work with Jira issues and Confluence pages via the official Atlassian remote MCP server.",
+        "vendor": "Atlassian",
+        "websiteUrl": null,
+        "repositoryUrl": null,
+        "documentationUrl": "https://www.atlassian.com/platform/remote-mcp-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "sse",
+          "url": "https://mcp.atlassian.com/v1/sse",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Atlassian account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://www.atlassian.com/platform/remote-mcp-server",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "atlassian"
+    },
+    {
+      "id": "remote:13b3d0f0f904299a543b17a3db05b934",
+      "identity": {
+        "kind": "remote",
+        "providerId": "asana.com",
+        "component": "asana"
+      },
+      "metadata": {
+        "name": "asana",
+        "displayName": "Asana",
+        "description": "Tasks, projects and teams via the official Asana MCP server.",
+        "vendor": "Asana",
+        "websiteUrl": null,
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.asana.com/docs/using-asanas-mcp-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "sse",
+          "url": "https://mcp.asana.com/sse",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Asana account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.asana.com/docs/using-asanas-mcp-server",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "asana"
+    },
+    {
+      "id": "remote:eea68ab3288e13d61fe0d222f06df791",
+      "identity": {
+        "kind": "remote",
+        "providerId": "cognition.ai",
+        "component": "deepwiki"
+      },
+      "metadata": {
+        "name": "deepwiki",
+        "displayName": "DeepWiki",
+        "description": "Ask questions about any public GitHub repository (Devin DeepWiki).",
+        "vendor": "Cognition",
+        "websiteUrl": null,
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.deepwiki.com/mcp",
+          "auth": {
+            "method": "none",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": null,
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "deepwiki"
+    },
+    {
+      "id": "registry:io.github.upstash/context7",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.upstash/context7"
+      },
+      "metadata": {
+        "name": "context7",
+        "displayName": "Context7",
+        "description": "Up-to-date library documentation and code examples for any framework.",
+        "vendor": "Upstash",
+        "websiteUrl": null,
+        "repositoryUrl": "https://github.com/upstash/context7",
+        "documentationUrl": "https://github.com/upstash/context7",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.context7.com/mcp",
+          "auth": {
+            "method": "none",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Works without a key (rate-limited); add a Context7 API key for higher limits.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://github.com/upstash/context7",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "context7"
+    },
+    {
+      "id": "registry:com.cloudflare.mcp/mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "com.cloudflare.mcp/mcp"
+      },
+      "metadata": {
+        "name": "cloudflare-docs",
+        "displayName": "Cloudflare Docs",
+        "description": "Search and read Cloudflare developer documentation.",
+        "vendor": "Cloudflare",
+        "websiteUrl": null,
+        "repositoryUrl": "https://github.com/cloudflare/mcp-server-cloudflare",
+        "documentationUrl": "https://github.com/cloudflare/mcp-server-cloudflare",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "sse",
+          "url": "https://docs.mcp.cloudflare.com/sse",
+          "auth": {
+            "method": "none",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": null,
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://github.com/cloudflare/mcp-server-cloudflare",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "cloudflare-docs"
+    },
+    {
+      "id": "registry:io.github.github/github-mcp-server",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.github/github-mcp-server"
+      },
+      "metadata": {
+        "name": "github",
+        "displayName": "GitHub",
+        "description": "Repositories, issues, pull requests and code search via the official GitHub MCP server.",
+        "vendor": "GitHub",
+        "websiteUrl": null,
+        "repositoryUrl": "https://github.com/github/github-mcp-server",
+        "documentationUrl": "https://github.com/github/github-mcp-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://api.githubcopilot.com/mcp/",
+          "auth": {
+            "method": "bearer",
+            "headerName": "Authorization",
+            "valuePrefix": "Bearer ",
+            "hint": "Use a GitHub personal access token (fine-grained PAT) as the credential.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://github.com/github/github-mcp-server",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "github"
+    },
+    {
+      "id": "registry:com.stripe/mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "com.stripe/mcp"
+      },
+      "metadata": {
+        "name": "stripe",
+        "displayName": "Stripe",
+        "description": "Payments, customers, invoices and products via the official Stripe MCP server.",
+        "vendor": "Stripe",
+        "websiteUrl": null,
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.stripe.com/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.stripe.com",
+          "auth": {
+            "method": "bearer",
+            "headerName": "Authorization",
+            "valuePrefix": "Bearer ",
+            "hint": "Use a Stripe API key (restricted keys recommended) as the credential.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.stripe.com/mcp",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "stripe"
+    },
+    {
+      "id": "remote:08e374f6be877ee805a52c864e02c11f",
+      "identity": {
+        "kind": "remote",
+        "providerId": "zapier.com",
+        "component": "zapier"
+      },
+      "metadata": {
+        "name": "zapier",
+        "displayName": "Zapier",
+        "description": "Trigger and run thousands of app actions through Zapier MCP.",
+        "vendor": "Zapier",
+        "websiteUrl": null,
+        "repositoryUrl": null,
+        "documentationUrl": "https://zapier.com/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.zapier.com/api/mcp/mcp",
+          "auth": {
+            "method": "bearer",
+            "headerName": "Authorization",
+            "valuePrefix": "Bearer ",
+            "hint": "Use your Zapier MCP API key (from the Zapier MCP settings page).",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://zapier.com/mcp",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "zapier"
+    },
+    {
+      "id": "registry:co.huggingface/hf-mcp-server",
+      "identity": {
+        "kind": "registry",
+        "name": "co.huggingface/hf-mcp-server"
+      },
+      "metadata": {
+        "name": "huggingface",
+        "displayName": "Hugging Face",
+        "description": "Search models, datasets, papers and Spaces on the Hugging Face Hub.",
+        "vendor": "Hugging Face",
+        "websiteUrl": null,
+        "repositoryUrl": null,
+        "documentationUrl": "https://huggingface.co/settings/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://huggingface.co/mcp",
+          "auth": {
+            "method": "bearer",
+            "headerName": "Authorization",
+            "valuePrefix": "Bearer ",
+            "hint": "Use a Hugging Face access token as the credential.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://huggingface.co/settings/mcp",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "huggingface"
+    },
+    {
+      "id": "registry:com.paypal.mcp/mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "com.paypal.mcp/mcp"
+      },
+      "metadata": {
+        "name": "paypal",
+        "displayName": "PayPal",
+        "description": "Invoices, payments and disputes via the official PayPal MCP server.",
+        "vendor": "PayPal",
+        "websiteUrl": null,
+        "repositoryUrl": null,
+        "documentationUrl": "https://developer.paypal.com/tools/mcp-server/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.paypal.com/mcp",
+          "auth": {
+            "method": "bearer",
+            "headerName": "Authorization",
+            "valuePrefix": "Bearer ",
+            "hint": "Use a PayPal access token as the credential.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developer.paypal.com/tools/mcp-server/",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "paypal"
+    },
+    {
+      "id": "remote:ec4f4e6641547105063251a2b3e71eee",
+      "identity": {
+        "kind": "remote",
+        "providerId": "squareup.com",
+        "component": "square"
+      },
+      "metadata": {
+        "name": "square",
+        "displayName": "Square",
+        "description": "Orders, payments, customers and catalog via the official Square MCP server.",
+        "vendor": "Square",
+        "websiteUrl": null,
+        "repositoryUrl": null,
+        "documentationUrl": "https://developer.squareup.com/docs/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "sse",
+          "url": "https://mcp.squareup.com/sse",
+          "auth": {
+            "method": "bearer",
+            "headerName": "Authorization",
+            "valuePrefix": "Bearer ",
+            "hint": "Use a Square access token as the credential.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developer.squareup.com/docs/mcp",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "square"
+    },
+    {
+      "id": "remote:852c6d74d2891f5e53cdca4b14d27871",
+      "identity": {
+        "kind": "remote",
+        "providerId": "semgrep.dev",
+        "component": "semgrep"
+      },
+      "metadata": {
+        "name": "semgrep",
+        "displayName": "Semgrep",
+        "description": "Scan code for security vulnerabilities with Semgrep.",
+        "vendor": "Semgrep",
+        "websiteUrl": null,
+        "repositoryUrl": "https://github.com/semgrep/mcp",
+        "documentationUrl": "https://github.com/semgrep/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "sse",
+          "url": "https://mcp.semgrep.ai/sse",
+          "auth": {
+            "method": "none",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": null,
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://github.com/semgrep/mcp",
+      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
+      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null,
+      "legacyLibraryKey": "semgrep"
+    }
+  ]
+}

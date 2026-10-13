@@ -1,0 +1,5 @@
+Official MCP Registry data is dedicated to CC0 1.0 Universal under its terms,
+effective 2025-09-02: https://modelcontextprotocol.io/registry/terms-of-service
+CC0 legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+This dedication applies to Registry Data, not referenced third-party packages.
+Nessie is an independent aggregator and is not endorsed by the Official MCP Registry.

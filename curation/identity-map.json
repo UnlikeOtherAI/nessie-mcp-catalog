@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "bindings": [
+    {
+      "sourceId": "punkpeye",
+      "nativeId": "Server Implementations:https://github.com/github/github-mcp-server",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.github/github-mcp-server"
+      },
+      "evidenceUrl": "https://github.com/github/github-mcp-server",
+      "reason": "The GitHub publisher Registry namespace declares this exact single MCP server repository and its hosted variant. This binding is specific to that named component."
+    },
+    {
+      "sourceId": "wong2",
+      "nativeId": "Official Servers:https://github.com/github/github-mcp-server",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.github/github-mcp-server"
+      },
+      "evidenceUrl": "https://github.com/github/github-mcp-server",
+      "reason": "The listing identifies GitHub’s official MCP server component, corroborated by its publisher Registry record, repository and documented remote."
+    },
+    {
+      "sourceId": "tensorblock",
+      "nativeId": "github-github-github-mcp-server-faa31886",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.github/github-mcp-server"
+      },
+      "evidenceUrl": "https://github.com/github/github-mcp-server",
+      "reason": "The structured source listing names the GitHub MCP server repository; the corresponding publisher Registry record identifies this component explicitly."
+    },
+    {
+      "sourceId": "punkpeye",
+      "nativeId": "Server Implementations:https://github.com/upstash/context7",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.upstash/context7"
+      },
+      "evidenceUrl": "https://github.com/upstash/context7",
+      "reason": "Explicit single-component binding for Upstash Context7; the publisher Registry record declares this repository and hosted endpoint."
+    },
+    {
+      "sourceId": "punkpeye-remote",
+      "nativeId": "Servers:https://linear.app/",
+      "identity": {
+        "kind": "registry",
+        "name": "app.linear/linear"
+      },
+      "evidenceUrl": "https://linear.app/docs/mcp",
+      "reason": "Linear’s vendor documentation, declared remote and publisher Registry namespace identify the same Linear service component."
+    },
+    {
+      "sourceId": "jaw9c-remote",
+      "nativeId": "Remote MCP Server List:https://linear.app/",
+      "identity": {
+        "kind": "registry",
+        "name": "app.linear/linear"
+      },
+      "evidenceUrl": "https://linear.app/docs/mcp",
+      "reason": "The table names the Linear operator and its legacy SSE route. Current configuration is maintained in curation; this is the same vendor component, not an endpoint-only match."
+    },
+    {
+      "sourceId": "punkpeye",
+      "nativeId": "Server Implementations:https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "identity": {
+        "kind": "repository",
+        "repositoryId": 890668799,
+        "component": "src/filesystem"
+      },
+      "evidenceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "reason": "The explicit src/filesystem path identifies this component inside repository 890668799. Other monorepo components remain separate."
+    },
+    {
+      "sourceId": "wong2",
+      "nativeId": "Reference Servers:https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "identity": {
+        "kind": "repository",
+        "repositoryId": 890668799,
+        "component": "src/filesystem"
+      },
+      "evidenceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "reason": "The same explicit src/filesystem component path and stable GitHub repository identity corroborate the reference server."
+    },
+    {
+      "sourceId": "wong2",
+      "nativeId": "Official Servers:https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+      "identity": {
+        "kind": "remote",
+        "providerId": "cognition.ai",
+        "component": "deepwiki"
+      },
+      "evidenceUrl": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+      "reason": "The Cognition/Devin documentation identifies the DeepWiki hosted component already named in Nessie’s migrated configuration."
+    },
+    {
+      "sourceId": "punkpeye-remote",
+      "nativeId": "Servers:https://deepwiki.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "cognition.ai",
+        "component": "deepwiki"
+      },
+      "evidenceUrl": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+      "reason": "DeepWiki’s documented Cognition operator and named service component bind this listing; the source’s hosted URL corroborates rather than defines identity."
+    },
+    {
+      "sourceId": "jaw9c-remote",
+      "nativeId": "Remote MCP Server List:https://devin.ai/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "cognition.ai",
+        "component": "deepwiki"
+      },
+      "evidenceUrl": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+      "reason": "This table row explicitly names DeepWiki and the Devin operator with its legacy SSE route; it is not every service on devin.ai."
+    }
+  ]
+}

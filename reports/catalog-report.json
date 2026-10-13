@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "sequence": 1,
+  "generatedAt": "2026-10-13T18:54:38.581Z",
+  "sources": [
+    {
+      "id": "official-registry",
+      "revision": "sha256:78c21a36523aa5230803868eede550de02192c5a391fc9e6adf344f8bda54d81",
+      "observations": 43035,
+      "remoteCandidates": 27326
+    },
+    {
+      "id": "punkpeye",
+      "revision": "cc7f1f42c3fa8ced6fd5c0e02ea366ef7ed8cf1b",
+      "observations": 4210,
+      "remoteCandidates": 0
+    },
+    {
+      "id": "wong2",
+      "revision": "39eb1d76d76e562657f3c657266a504cea159e23",
+      "observations": 515,
+      "remoteCandidates": 0
+    },
+    {
+      "id": "punkpeye-remote",
+      "revision": "325234c8091c265e059e3196965a6cb8a38f0d13",
+      "observations": 924,
+      "remoteCandidates": 0
+    },
+    {
+      "id": "jaw9c-remote",
+      "revision": "bad1d9fc57875ea9062497fc0321e50f1ce1994e",
+      "observations": 121,
+      "remoteCandidates": 0
+    },
+    {
+      "id": "tensorblock",
+      "revision": "f0651765f3101bce0f40076ebbae753b53fdd8bd",
+      "observations": 7729,
+      "remoteCandidates": 65
+    }
+  ],
+  "observations": 56534,
+  "canonicalEntries": 43042,
+  "remoteEntries": 27332,
+  "packageOnlyEntries": 15061,
+  "multiSourceEntries": 11,
+  "approvedEntries": 0,
+  "madeByNessieEntries": 0,
+  "catalogBytes": 51470635,
+  "unresolvedObservations": 13488,
+  "limitations": [
+    "Directory observations without a strong identity binding remain pending; remote candidates are not tested installations.",
+    "All upstream trust/verification claims remain upstream assertions. No third-party server was executed or approved."
+  ]
+}

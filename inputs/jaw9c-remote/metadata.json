@@ -1,0 +1,13 @@
+{
+  "repository": "jaw9c/awesome-remote-mcp-servers",
+  "repositoryId": 961291556,
+  "stars": 1143,
+  "defaultBranch": "main",
+  "commit": "bad1d9fc57875ea9062497fc0321e50f1ce1994e",
+  "committedAt": "2026-09-24T13:40:20Z",
+  "fetchedAt": "2026-10-13T18:52:46.299Z",
+  "license": "MIT",
+  "licenseDigest": "c35a79fbe6813ee054bf92d24dd77cba0c61988040e7f169980a0f3c977a2f43",
+  "inputPath": "README.md",
+  "sanitation": "Credential values and executable defaults removed before persistence; snapshot hash covers sanitized bytes."
+}

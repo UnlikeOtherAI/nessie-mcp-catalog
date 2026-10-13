@@ -1,0 +1,13 @@
+{
+  "repository": "TensorBlock/awesome-mcp-servers",
+  "repositoryId": 960225366,
+  "stars": 898,
+  "defaultBranch": "main",
+  "commit": "f0651765f3101bce0f40076ebbae753b53fdd8bd",
+  "committedAt": "2026-10-13T16:14:39Z",
+  "fetchedAt": "2026-10-13T18:52:47.353Z",
+  "license": "MIT",
+  "licenseDigest": "14b8c4589cf5d0d2d831c92b104daf6457869c39cb25a899adc7412413135867",
+  "inputPath": "data/catalog.json",
+  "sanitation": "Credential values and executable defaults removed before persistence; snapshot hash covers sanitized bytes."
+}

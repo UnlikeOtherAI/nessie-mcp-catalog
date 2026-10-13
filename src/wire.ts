@@ -1,5 +1,6 @@
 /** Public wire contract v1. All objects are strict; no credentials or install commands. */
 import { z } from 'zod'
+import { publicUrl } from './sanitize.ts'
 
 export const PUBLISHER = 'UnlikeOtherAI/nessie-mcp-catalog' as const
 const text = z.string().max(4000)
@@ -8,7 +9,7 @@ export const Digest = z.string().regex(/^[a-f0-9]{64}$/)
 export const Timestamp = z.iso.datetime()
 export const PublicUrl = z.url().max(2000).refine((value) => {
   const url = new URL(value)
-  return url.protocol === 'https:' && !url.username && !url.password && !url.hash
+  return url.protocol === 'https:' && !url.username && !url.password && !url.hash && publicUrl(value) !== null
 }, 'Must be a credential-free HTTPS URL without a fragment')
 const nullableUrl = PublicUrl.nullable()
 
@@ -72,12 +73,12 @@ export const ManifestSchema = z.strictObject({
   schemaVersion: z.literal(1), publisher: z.literal(PUBLISHER),
   sequence: z.number().int().positive().max(Number.MAX_SAFE_INTEGER), generatedAt: Timestamp,
   complete: z.literal(true), catalogPath: z.literal('dist/catalog.json'),
-  catalogSha256: Digest, entryCount: z.number().int().min(1).max(20_000),
+  catalogSha256: Digest, entryCount: z.number().int().min(1).max(100_000),
   sourceSnapshots: z.array(SnapshotSchema).min(1).max(20),
 })
 export const CatalogSchema = z.strictObject({
   schemaVersion: z.literal(1), sequence: z.number().int().positive().max(Number.MAX_SAFE_INTEGER),
-  entries: z.array(EntrySchema).min(1).max(20_000),
+  entries: z.array(EntrySchema).min(1).max(100_000),
 })
 export type Identity = z.infer<typeof IdentitySchema>
 export type Metadata = z.infer<typeof MetadataSchema>

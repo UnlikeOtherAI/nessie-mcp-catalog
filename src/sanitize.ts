@@ -7,7 +7,7 @@ const CREDENTIAL_ASSIGNMENT = /((?:api[_-]?key|access[_-]?token|refresh[_-]?toke
 export function safeText(value: unknown, max = 4000): string {
   if (typeof value !== 'string') return ''
   return value.replace(SECRET_VALUE, '[REDACTED]').replace(CREDENTIAL_ASSIGNMENT, '$1[REDACTED]')
-    .replace(/https?:\/\/[^\s<>"`]+/g, (url) => publicUrl(url) ?? '[REDACTED-URL]')
+    .replace(/https?:\/\/[^\s<>"`\])]+/g, (url) => publicUrl(url) ? url : '[REDACTED-URL]')
     .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '').slice(0, max)
 }
 
@@ -50,7 +50,13 @@ export function sanitizeJson(value: unknown, depth = 0): unknown {
   if (value !== null && typeof value === 'object') {
     const result: Record<string, unknown> = {}
     for (const [key, item] of Object.entries(value)) {
-      if (SENSITIVE_KEY.test(key) || ['value', 'default', 'headers', 'environmentVariables', 'arguments', 'command', 'commands', 'env'].includes(key)) {
+      if (key === 'headers' && Array.isArray(item)) {
+        result[key] = item.map((header: Record<string, unknown>) => ({
+          name: safeText(header.name, 100), isRequired: header.isRequired === true,
+          isSecret: header.isSecret === true,
+          valuePrefix: typeof header.value === 'string' && header.value.startsWith('Bearer ') ? 'Bearer ' : null,
+        }))
+      } else if (SENSITIVE_KEY.test(key) || ['value', 'default', 'headers', 'environmentVariables', 'arguments', 'command', 'commands', 'env'].includes(key)) {
         result[key] = '[REDACTED]'
       } else result[key] = sanitizeJson(item, depth + 1)
     }
