@@ -6,8 +6,8 @@ const CREDENTIAL_ASSIGNMENT = /((?:api[_-]?key|access[_-]?token|refresh[_-]?toke
 
 export function safeText(value: unknown, max = 4000): string {
   if (typeof value !== 'string') return ''
-  return value.replace(SECRET_VALUE, '[REDACTED]').replace(CREDENTIAL_ASSIGNMENT, '$1[REDACTED]')
-    .replace(/https?:\/\/[^\s<>"`\])]+/g, (url) => publicUrl(url) ? url : '[REDACTED-URL]')
+  return value.replace(/https?:\/\/[^\s<>"`\])]+/g, (url) => publicUrl(url) ? url : '[REDACTED-URL]')
+    .replace(SECRET_VALUE, '[REDACTED]').replace(CREDENTIAL_ASSIGNMENT, '$1[REDACTED]')
     .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '').slice(0, max)
 }
 

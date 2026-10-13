@@ -34,7 +34,7 @@ export function parseRegistry(body: string, snapshot: Snapshot): Observation[] {
           headerName: name, valuePrefix: header.valuePrefix === 'Bearer ' ? 'Bearer ' : null, hint: null, scopes: [] }
       }
       return result
-    }).filter((item) => item !== null).slice(0, 30)
+    }).filter((item) => item !== null)
     const packages = array(server.packages).flatMap((rawPackage): Package[] => {
       const item = record(rawPackage)
       const identifier = safeText(item.identifier, 300)
@@ -43,7 +43,7 @@ export function parseRegistry(body: string, snapshot: Snapshot): Observation[] {
       const transport = record(item.transport).type
       return [{ registryType, identifier, version: nullable(item.version, 200),
         transport: transport === 'stdio' ? 'stdio' : transport === 'sse' ? 'sse' : transport === 'streamable-http' ? 'http' : 'unknown' }]
-    }).slice(0, 30)
+    })
     return { nativeId, sourceRef: sourceRef(snapshot, nativeId, raw), identity: { kind: 'registry', name },
       metadata: info, remotes, packages, lifecycle: status === 'deleted' ? 'withdrawn' : status === 'deprecated' ? 'deprecated' : 'active',
       selected: official.isLatest !== false,

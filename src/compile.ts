@@ -51,7 +51,7 @@ export function compile(observations: Observation[], identityMap: unknown, curat
     entry.metadata = { ...entry.metadata, ...override.metadata }
     if (override.remotes !== undefined) entry.remotes = override.remotes
     if (override.packages !== undefined) entry.packages = override.packages
-    if (override.lifecycle !== undefined && entry.lifecycle !== 'withdrawn') entry.lifecycle = override.lifecycle
+    if (override.lifecycle !== undefined && entry.lifecycle === 'active') entry.lifecycle = override.lifecycle
     entry.sourceRefs.push({ sourceId: 'nessie-curation', nativeId: override.legacyLibraryKey ?? override.id, revision: override.sourceRevision,
       path: 'curation/entries.json', url: override.sourceUrl, digest: digest(override), license: 'MIT' })
     entry.materialDigest = materialDigest(entry)
@@ -61,11 +61,17 @@ export function compile(observations: Observation[], identityMap: unknown, curat
     const now = Date.parse(generatedAt)
     if (review) {
       const evidence = review.approval
+      const testedRemotesApplicable = !(new Set(evidence.testedRemoteIds).size !== evidence.testedRemoteIds.length
+        || (entry.remotes.length > 0 && evidence.testedRemoteIds.length === 0)
+        || evidence.testedRemoteIds.some((id) => !entry.remotes.some((remote) => remote.id === id && remote.auth.method !== 'unknown')))
+      if (evidence.materialDigest === entry.materialDigest && !testedRemotesApplicable) {
+        throw new Error('Approval must identify existing tested remotes with a known authentication contract')
+      }
       const validity = Date.parse(evidence.expiresAt) - Date.parse(evidence.testedAt)
       const maxDays = entry.remotes.length ? 30 : 90
       if (validity <= 0 || validity > maxDays * 86_400_000 || Date.parse(evidence.testedAt) > now) throw new Error('Invalid approval validity window')
       entry.nessieApproved = override.nessieApproved && !review.revoked && entry.lifecycle === 'active'
-        && evidence.materialDigest === entry.materialDigest && Date.parse(evidence.expiresAt) > now
+        && testedRemotesApplicable && evidence.materialDigest === entry.materialDigest && Date.parse(evidence.expiresAt) > now
     }
     if (override.madeByNessie && (!override.authorship || override.authorship.componentId !== override.id)) {
       throw new Error('Authorship requires evidence for this exact component')

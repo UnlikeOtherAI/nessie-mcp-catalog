@@ -6,8 +6,9 @@ import type { Source } from './model.ts'
 import type { Snapshot } from './wire.ts'
 
 export type Acquisition = { snapshot: Snapshot; body: string; license: string; metadata: unknown }
-export async function acquire(source: Source, fetchedAt: string, budget: FetchBudget): Promise<Acquisition> {
-  const get = (url: string, maxBytes = source.maxBytes) => readPublic(url, { maxBytes, budget })
+export async function acquire(source: Source, fetchedAt: string, budget: FetchBudget,
+  reader: typeof readPublic = readPublic): Promise<Acquisition> {
+  const get = (url: string, maxBytes = source.maxBytes) => reader(url, { maxBytes, budget })
   if (source.kind === 'registry') {
     const records: unknown[] = []
     const pages: { digest: string; records: number }[] = []
@@ -51,6 +52,7 @@ export async function acquire(source: Source, fetchedAt: string, budget: FetchBu
   const response = await get(`${base}/${source.path}`)
   const license = safeText((await get(`${base}/LICENSE`, 128 * 1024)).body, 128 * 1024)
   if (!license.includes('MIT License') && !license.includes('MIT License (MIT)')) throw new Error('Source license changed')
+  if (source.licenseSha256 && sha256(license) !== source.licenseSha256) throw new Error('Source license notice changed; review required')
   const body = source.kind === 'markdown'
     ? safeText(response.body, source.maxBytes)
     : json(sanitizeJson(JSON.parse(response.body)))

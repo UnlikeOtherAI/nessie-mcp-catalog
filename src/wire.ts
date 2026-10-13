@@ -45,6 +45,7 @@ export const ApprovalSchema = z.strictObject({
   policyVersion: z.literal('approval-policy-v1'), materialDigest: Digest,
   testedAt: Timestamp, expiresAt: Timestamp, nessieRevision: key, suiteRevision: key,
   environment: z.enum(['isolated-fixture', 'scoped-live-readonly']),
+  testedRemoteIds: z.array(key).max(30),
   checks: z.strictObject({
     compatibility: z.literal('passed'), readOnlyFunctional: z.literal('passed'),
     authScope: z.literal('passed'), securityReview: z.literal('passed'),

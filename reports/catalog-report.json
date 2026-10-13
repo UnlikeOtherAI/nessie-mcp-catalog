@@ -47,6 +47,7 @@
   "multiSourceEntries": 11,
   "approvedEntries": 0,
   "madeByNessieEntries": 0,
+  "missingSourceObservations": 0,
   "catalogBytes": 51470635,
   "unresolvedObservations": 13488,
   "limitations": [

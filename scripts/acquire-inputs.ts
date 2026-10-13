@@ -3,12 +3,14 @@ import { acquire } from '../src/acquire.ts'
 import { FetchBudget } from '../src/fetch.ts'
 import { SourcesSchema } from '../src/model.ts'
 import { json } from '../src/hash.ts'
+import { parseSource } from '../src/adapters/index.ts'
 const sources = SourcesSchema.parse(JSON.parse(await readFile('sources.json', 'utf8'))).sources
 const budget = new FetchBudget()
 const snapshots = []
 for (const source of sources) {
   console.log(`Fetching ${source.id}`)
   const result = await acquire(source, new Date().toISOString(), budget)
+  result.snapshot.observations = parseSource(result.body, result.snapshot).length
   await mkdir(`inputs/${source.id}`, { recursive: true })
   await writeFile(result.snapshot.snapshotPath, result.body)
   await writeFile(`inputs/${source.id}/metadata.json`, json(result.metadata))

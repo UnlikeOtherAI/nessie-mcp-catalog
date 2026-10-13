@@ -7,6 +7,7 @@ export const SourceSchema = z.strictObject({
   url: PublicUrl.optional(), repo: z.string().regex(/^[\w.-]+\/[\w.-]+$/).optional(),
   repositoryId: z.number().int().positive().optional(), path: z.string().optional(),
   license: z.enum(['MIT', 'CC0-1.0']), cadenceHours: z.number().int().min(24).max(168),
+  licenseSha256: z.string().regex(/^[a-f0-9]{64}$/).optional(),
   maxBytes: z.number().int().min(1).max(16 * 1024 * 1024),
 })
 export const SourcesSchema = z.strictObject({ schemaVersion: z.literal(1), sources: z.array(SourceSchema).min(1).max(20) })

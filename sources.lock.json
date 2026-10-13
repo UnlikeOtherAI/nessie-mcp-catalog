@@ -10,7 +10,7 @@
       "fetchedAt": "2026-10-13T18:48:38.019Z",
       "license": "CC0-1.0",
       "adapterVersion": 1,
-      "observations": 0,
+      "observations": 43035,
       "status": "complete",
       "snapshotPath": "inputs/official-registry/snapshot.json"
     },
@@ -23,7 +23,7 @@
       "fetchedAt": "2026-10-13T18:52:43.181Z",
       "license": "MIT",
       "adapterVersion": 1,
-      "observations": 0,
+      "observations": 4210,
       "status": "complete",
       "snapshotPath": "inputs/punkpeye/snapshot.md"
     },
@@ -36,7 +36,7 @@
       "fetchedAt": "2026-10-13T18:52:44.395Z",
       "license": "MIT",
       "adapterVersion": 1,
-      "observations": 0,
+      "observations": 515,
       "status": "complete",
       "snapshotPath": "inputs/wong2/snapshot.md"
     },
@@ -49,7 +49,7 @@
       "fetchedAt": "2026-10-13T18:52:45.391Z",
       "license": "MIT",
       "adapterVersion": 1,
-      "observations": 0,
+      "observations": 924,
       "status": "complete",
       "snapshotPath": "inputs/punkpeye-remote/snapshot.md"
     },
@@ -62,7 +62,7 @@
       "fetchedAt": "2026-10-13T18:52:46.299Z",
       "license": "MIT",
       "adapterVersion": 1,
-      "observations": 0,
+      "observations": 121,
       "status": "complete",
       "snapshotPath": "inputs/jaw9c-remote/snapshot.md"
     },
@@ -75,7 +75,7 @@
       "fetchedAt": "2026-10-13T18:52:47.353Z",
       "license": "MIT",
       "adapterVersion": 1,
-      "observations": 0,
+      "observations": 7729,
       "status": "complete",
       "snapshotPath": "inputs/tensorblock/snapshot.json"
     }

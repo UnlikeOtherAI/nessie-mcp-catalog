@@ -10,7 +10,9 @@ import type { Snapshot } from '../wire.ts'
 type Node = { type: string; value?: string; url?: string; depth?: number; children?: Node[]; position?: { start: { line: number } } }
 const flatten = (node: Node): string => node.type === 'html' ? '' : node.value ?? node.children?.map(flatten).join(' ') ?? ''
 function links(node: Node): string[] {
-  return [...(node.type === 'link' && node.url ? [node.url] : []), ...(node.children ?? []).flatMap(links)]
+  return [...(node.type === 'link' && node.url ? [node.url] : []),
+    ...(node.type === 'inlineCode' && node.value && publicUrl(node.value) ? [node.value] : []),
+    ...(node.children ?? []).flatMap(links)]
 }
 const WONG_SECTIONS = new Set(['Reference Servers', 'Official Servers', 'Community Servers'])
 const STOP_SECTIONS = new Set(['Community', 'Related', 'Contributing', 'License', 'Resources', 'Tools', 'Clients', 'Frameworks'])
@@ -43,11 +45,11 @@ export function parseMarkdown(body: string, snapshot: Snapshot): Observation[] {
     for (const candidate of candidates) {
       const urls = [...new Set(links(candidate).map(publicUrl).filter((url) => url !== null))].slice(0, 30)
       if (!urls.length) continue
-      const first = urls[0]
+      const firstLink = findFirstLink(candidate)
+      const first = publicUrl(firstLink?.url) ?? urls[0]
       const nativeId = `${section}:${first}`
       const line = candidate.position?.start.line ?? 0
       const content = safeText(flatten(candidate))
-      const firstLink = findFirstLink(candidate)
       const info = metadata(firstLink ? flatten(firstLink) : content.slice(0, 150), content)
       info.repositoryUrl = urls.find((url) => new URL(url).hostname === 'github.com') ?? null
       info.websiteUrl = info.repositoryUrl === first ? null : first

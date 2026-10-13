@@ -500,6 +500,15 @@
                       "scoped-live-readonly"
                     ]
                   },
+                  "testedRemoteIds": {
+                    "maxItems": 30,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 300
+                    }
+                  },
                   "checks": {
                     "type": "object",
                     "properties": {
@@ -555,6 +564,7 @@
                   "nessieRevision",
                   "suiteRevision",
                   "environment",
+                  "testedRemoteIds",
                   "checks",
                   "evidenceUrl",
                   "decisionUrl",

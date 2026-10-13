@@ -1,11 +1,68 @@
 {
   "schemaVersion": 1,
   "sources": [
-    { "id": "official-registry", "kind": "registry", "url": "https://registry.modelcontextprotocol.io/v0.1/servers", "license": "CC0-1.0", "cadenceHours": 24, "maxBytes": 8388608 },
-    { "id": "punkpeye", "kind": "markdown", "repo": "punkpeye/awesome-mcp-servers", "repositoryId": 896335270, "path": "README.md", "license": "MIT", "cadenceHours": 24, "maxBytes": 8388608 },
-    { "id": "wong2", "kind": "markdown", "repo": "wong2/awesome-mcp-servers", "repositoryId": 895553015, "path": "README.md", "license": "MIT", "cadenceHours": 168, "maxBytes": 8388608 },
-    { "id": "punkpeye-remote", "kind": "markdown", "repo": "punkpeye/awesome-remote-mcp-servers", "repositoryId": 1360778208, "path": "README.md", "license": "MIT", "cadenceHours": 24, "maxBytes": 8388608 },
-    { "id": "jaw9c-remote", "kind": "markdown", "repo": "jaw9c/awesome-remote-mcp-servers", "repositoryId": 961291556, "path": "README.md", "license": "MIT", "cadenceHours": 24, "maxBytes": 8388608 },
-    { "id": "tensorblock", "kind": "tensorblock", "repo": "TensorBlock/awesome-mcp-servers", "repositoryId": 960225366, "path": "data/catalog.json", "license": "MIT", "cadenceHours": 24, "maxBytes": 16777216 }
+    {
+      "id": "official-registry",
+      "kind": "registry",
+      "url": "https://registry.modelcontextprotocol.io/v0.1/servers",
+      "license": "CC0-1.0",
+      "cadenceHours": 24,
+      "maxBytes": 8388608
+    },
+    {
+      "id": "punkpeye",
+      "kind": "markdown",
+      "repo": "punkpeye/awesome-mcp-servers",
+      "repositoryId": 896335270,
+      "path": "README.md",
+      "license": "MIT",
+      "cadenceHours": 24,
+      "maxBytes": 8388608,
+      "licenseSha256": "8cb2c0a4c6590502ffb793005c0f1b440ca4db34dcc209bbe9cf34d3b52a7e07"
+    },
+    {
+      "id": "wong2",
+      "kind": "markdown",
+      "repo": "wong2/awesome-mcp-servers",
+      "repositoryId": 895553015,
+      "path": "README.md",
+      "license": "MIT",
+      "cadenceHours": 168,
+      "maxBytes": 8388608,
+      "licenseSha256": "2837af1ae1ffc41dad98271e30a7fe9b28943cead4088731911fbca1bc39125a"
+    },
+    {
+      "id": "punkpeye-remote",
+      "kind": "markdown",
+      "repo": "punkpeye/awesome-remote-mcp-servers",
+      "repositoryId": 1360778208,
+      "path": "README.md",
+      "license": "MIT",
+      "cadenceHours": 24,
+      "maxBytes": 8388608,
+      "licenseSha256": "2e89c3971c70788d1f6df0b62ac8446b67066c34a07f6aad546965dba9d5df5d"
+    },
+    {
+      "id": "jaw9c-remote",
+      "kind": "markdown",
+      "repo": "jaw9c/awesome-remote-mcp-servers",
+      "repositoryId": 961291556,
+      "path": "README.md",
+      "license": "MIT",
+      "cadenceHours": 24,
+      "maxBytes": 8388608,
+      "licenseSha256": "c35a79fbe6813ee054bf92d24dd77cba0c61988040e7f169980a0f3c977a2f43"
+    },
+    {
+      "id": "tensorblock",
+      "kind": "tensorblock",
+      "repo": "TensorBlock/awesome-mcp-servers",
+      "repositoryId": 960225366,
+      "path": "data/catalog.json",
+      "license": "MIT",
+      "cadenceHours": 24,
+      "maxBytes": 16777216,
+      "licenseSha256": "14b8c4589cf5d0d2d831c92b104daf6457869c39cb25a899adc7412413135867"
+    }
   ]
 }

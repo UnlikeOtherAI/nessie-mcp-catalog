@@ -6,6 +6,7 @@ const ALLOWED_HOSTS = new Set(['api.github.com', 'raw.githubusercontent.com', 'r
 export class FetchBudget {
   bytes = 0
   readonly limit: number
+  readonly deadline = Date.now() + 10 * 60_000
   constructor(limit = 128 * 1024 * 1024) { this.limit = limit }
   add(size: number): void {
     this.bytes += size
@@ -62,6 +63,7 @@ function once(url: URL, options: ReadOptions): Promise<ReadResult & { location: 
 }
 
 export async function readPublic(urlString: string, options: ReadOptions): Promise<ReadResult> {
+  if (Date.now() >= options.budget.deadline) throw new Error('Source refresh time budget exhausted')
   let url = new URL(urlString)
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
