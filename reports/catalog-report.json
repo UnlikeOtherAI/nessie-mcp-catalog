@@ -24,13 +24,13 @@
     {
       "id": "punkpeye-remote",
       "revision": "325234c8091c265e059e3196965a6cb8a38f0d13",
-      "observations": 924,
+      "observations": 928,
       "remoteCandidates": 0
     },
     {
       "id": "jaw9c-remote",
       "revision": "bad1d9fc57875ea9062497fc0321e50f1ce1994e",
-      "observations": 121,
+      "observations": 127,
       "remoteCandidates": 0
     },
     {
@@ -40,7 +40,7 @@
       "remoteCandidates": 65
     }
   ],
-  "observations": 56534,
+  "observations": 56544,
   "canonicalEntries": 43042,
   "remoteEntries": 27332,
   "packageOnlyEntries": 15061,
@@ -49,7 +49,7 @@
   "madeByNessieEntries": 0,
   "missingSourceObservations": 0,
   "catalogBytes": 51470635,
-  "unresolvedObservations": 13488,
+  "unresolvedObservations": 13498,
   "limitations": [
     "Directory observations without a strong identity binding remain pending; remote candidates are not tested installations.",
     "All upstream trust/verification claims remain upstream assertions. No third-party server was executed or approved."

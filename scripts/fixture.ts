@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises'
 import { digest, json, sha256 } from '../src/hash.ts'
-import { CatalogSchema, ManifestSchema, type Entry } from '../src/wire.ts'
+import { ApprovalSchema, CatalogSchema, ManifestSchema, type Entry } from '../src/wire.ts'
 
 const identity = { kind: 'registry' as const, name: 'com.example/weather' }
 const remotes = [{
@@ -33,3 +33,11 @@ const manifest = ManifestSchema.parse({
 await mkdir('test/fixtures', { recursive: true })
 await writeFile('test/fixtures/catalog-v1.json', catalogText)
 await writeFile('test/fixtures/manifest-v1.json', json(manifest))
+await writeFile('test/fixtures/approval-v1.json', json(ApprovalSchema.parse({
+  policyVersion: 'approval-policy-v1', materialDigest: entry.materialDigest,
+  testedAt: '2026-10-13T00:00:00.000Z', expiresAt: '2026-10-25T00:00:00.000Z',
+  testedRemoteIds: ['primary'], nessieRevision: 'synthetic-nessie-revision', suiteRevision: 'synthetic-suite-revision',
+  environment: 'isolated-fixture', checks: { compatibility: 'passed', readOnlyFunctional: 'passed',
+    authScope: 'passed', securityReview: 'passed' }, evidenceUrl: 'https://example.com/synthetic-results',
+  decisionUrl: 'https://example.com/synthetic-review', limitations: ['Synthetic fixture only; not a production approval.'],
+})))

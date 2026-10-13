@@ -56,7 +56,7 @@
       "fetchedAt": "2026-10-13T18:52:45.391Z",
       "license": "MIT",
       "adapterVersion": 1,
-      "observations": 924,
+      "observations": 928,
       "status": "complete",
       "snapshotPath": "inputs/punkpeye-remote/snapshot.md"
     },
@@ -69,7 +69,7 @@
       "fetchedAt": "2026-10-13T18:52:46.299Z",
       "license": "MIT",
       "adapterVersion": 1,
-      "observations": 121,
+      "observations": 127,
       "status": "complete",
       "snapshotPath": "inputs/jaw9c-remote/snapshot.md"
     },

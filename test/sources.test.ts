@@ -53,6 +53,15 @@ test('Registry lifecycle/transport stay structural; undeclared authentication re
   assert.throws(() => parseSource(JSON.stringify(input), snapshot('official-registry', 'registry')))
 })
 
+test('two Markdown components sharing one repository URL remain separate observations', () => {
+  const body = '# Directory\n## Server Implementations\n'
+    + '- [Database component](https://github.com/example/mono) component-a\n'
+    + '- [Filesystem component](https://github.com/example/mono) component-b\n'
+  const rows = parseSource(body, snapshot('punkpeye', 'markdown'))
+  assert.equal(rows.length, 2)
+  assert.notEqual(rows[0].nativeId, rows[1].nativeId)
+})
+
 test('Registry traversal rejects repeated cursors and never returns a partial snapshot', async () => {
   let calls = 0
   const reader: typeof readPublic = async () => {

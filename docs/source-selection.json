@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-10-13T19:15:10.421Z",
+  "excluded": [
+    {
+      "repository": "appcypher/awesome-mcp-servers",
+      "repositoryId": 895801050,
+      "stars": 5795,
+      "archived": true,
+      "lastPushedAt": "2026-05-06T08:04:35Z",
+      "license": null,
+      "apiUrl": "https://api.github.com/repos/appcypher/awesome-mcp-servers",
+      "decision": "Excluded: archived and no API-recognized reuse license."
+    }
+  ]
+}

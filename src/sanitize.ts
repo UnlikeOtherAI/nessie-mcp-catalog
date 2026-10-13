@@ -13,10 +13,12 @@ export function safeText(value: unknown, max = 4000): string {
 
 export function isPublicAddress(address: string): boolean {
   if (isIP(address) === 4) {
-    const [a, b] = address.split('.').map(Number)
+    const [a, b, c] = address.split('.').map(Number)
     return a !== 0 && a !== 10 && a !== 127 && a < 224 && !(a === 169 && b === 254)
       && !(a === 172 && b >= 16 && b <= 31) && !(a === 192 && b === 168)
       && !(a === 100 && b >= 64 && b <= 127) && !(a === 198 && (b === 18 || b === 19))
+      && !(a === 192 && b === 0 && (c === 0 || c === 2)) && !(a === 192 && b === 88 && c === 99)
+      && !(a === 198 && b === 51 && c === 100) && !(a === 203 && b === 0 && c === 113)
   }
   if (isIP(address) === 6) {
     const normalized = address.toLowerCase()

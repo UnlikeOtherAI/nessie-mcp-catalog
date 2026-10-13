@@ -63,15 +63,23 @@ function once(url: URL, options: ReadOptions): Promise<ReadResult & { location: 
 }
 
 export async function readPublic(urlString: string, options: ReadOptions): Promise<ReadResult> {
-  if (Date.now() >= options.budget.deadline) throw new Error('Source refresh time budget exhausted')
   let url = new URL(urlString)
+  const origin = url.origin
+  if (!ALLOWED_HOSTS.has(url.hostname) || url.protocol !== 'https:' || url.username || url.password || url.port) {
+    throw new Error('Source URL is outside the reviewed fetch allowlist')
+  }
   for (let attempt = 0; attempt < 3; attempt++) {
+    if (Date.now() >= options.budget.deadline) throw new Error('Source refresh time budget exhausted')
+    if (options.budget.bytes > options.budget.limit) throw new Error('Total download budget exceeded')
     try {
-      let result = await once(url, options)
+      const bounded = { ...options, timeoutMs: Math.min(options.timeoutMs ?? 20_000, options.budget.deadline - Date.now()) }
+      let result = await once(url, bounded)
       for (let redirects = 0; result.status >= 300 && result.status < 400 && result.status !== 304; redirects++) {
         if (!result.location || redirects >= 3) throw new Error('Source redirect limit exceeded')
         url = new URL(result.location, url)
-        result = await once(url, options)
+        // A Registry/raw redirect must never turn into an authenticated GitHub API read.
+        if (url.origin !== origin) throw new Error('Source redirect changed origin')
+        result = await once(url, bounded)
       }
       if (result.status === 200 || result.status === 304) return result
       if (result.status !== 429 && result.status < 500) throw new Error(`Source HTTP ${result.status}`)

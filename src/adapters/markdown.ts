@@ -1,7 +1,6 @@
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkGfm from 'remark-gfm'
-import { digest } from '../hash.ts'
 import { publicUrl, safeText } from '../sanitize.ts'
 import { metadata, sourceRef } from './common.ts'
 import type { Observation } from '../model.ts'
@@ -59,17 +58,26 @@ export function parseMarkdown(body: string, snapshot: Snapshot): Observation[] {
         links: urls, unresolvedReason: 'Directory listing requires an explicit component binding; URLs are not installation proof.' })
     }
   }
-  // One source can repeat an exact listing under categories. Preserve corroborating category values.
-  const unique = new Map<string, Observation>()
+  // A repeated repository URL can name different components. Only byte-equivalent
+  // normalized rows may collapse; ambiguous URL groups get distinct row identities.
+  const groups = new Map<string, Map<string, Observation>>()
   for (const observation of result) {
-    const previous = unique.get(observation.nativeId)
-    if (!previous) unique.set(observation.nativeId, observation)
+    const rows = groups.get(observation.nativeId) ?? new Map<string, Observation>()
+    const fingerprint = observation.sourceRef.digest
+    const previous = rows.get(fingerprint)
+    if (!previous) rows.set(fingerprint, observation)
     else {
       previous.metadata.categories = [...new Set([...previous.metadata.categories, ...observation.metadata.categories])].slice(0, 20)
-      previous.sourceRef.digest = digest([previous.sourceRef.digest, observation.sourceRef.digest])
     }
+    groups.set(observation.nativeId, rows)
   }
-  return [...unique.values()]
+  return [...groups.values()].flatMap((rows) => [...rows].map(([fingerprint, item]) => {
+    if (rows.size > 1) {
+      item.nativeId = `${item.nativeId}#row-${fingerprint.slice(0, 12)}`
+      item.sourceRef.nativeId = item.nativeId
+    }
+    return item
+  }))
 }
 function findFirstLink(node: Node): Node | undefined {
   if (node.type === 'link') return node

@@ -2,7 +2,7 @@
 
 Nessie's public, owned catalog collects MCP server information from several public sources, retains the admitted inputs and their provenance, and publishes a consistent artifact for Nessie. This repository is the shared source and curation authority. Nessie imports its output into the existing application catalog; it does not maintain a second discovery catalog.
 
-The initial complete publication contains **43,042 canonical components**, including **27,332 with a usable HTTPS remote configuration**, **15,061 package-only components**, and **13,488 additional unresolved directory observations**. There are 56,534 observations across six sources. A remote configuration is a connection candidate, not proof that a server works. No third-party server package or tool was executed to collect this data.
+The initial complete publication contains **43,042 canonical components**, including **27,332 with a usable HTTPS remote configuration**, **15,061 package-only components**, and **13,498 additional unresolved directory observations**. There are 56,544 observations across six sources. A remote configuration is a connection candidate, not proof that a server works. No third-party server package or tool was executed to collect this data.
 
 ## Sources and provenance
 
@@ -13,11 +13,11 @@ Stars below were observed through GitHub's API on 2026-10-13. They informed sour
 | [Official MCP Registry](https://registry.modelcontextprotocol.io/docs) | — | Complete API traversal, 2026-10-13 | 43,035 | Structured publisher namespaces, versions, packages, declared remotes and lifecycle |
 | [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | 96,281 | 2026-10-09 | 4,210 | Broad, actively maintained general list |
 | [wong2/awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) | 4,359 | 2026-07-13 | 515 | Established selective list; checked weekly because its update cadence is slower |
-| [punkpeye/awesome-remote-mcp-servers](https://github.com/punkpeye/awesome-remote-mcp-servers) | 1,160 | 2026-10-09 | 924 | Maintained remote-focused discovery |
-| [jaw9c/awesome-remote-mcp-servers](https://github.com/jaw9c/awesome-remote-mcp-servers) | 1,143 | 2026-09-24 | 121 | Independent remote list with structured rows |
+| [punkpeye/awesome-remote-mcp-servers](https://github.com/punkpeye/awesome-remote-mcp-servers) | 1,160 | 2026-10-09 | 928 | Maintained remote-focused discovery |
+| [jaw9c/awesome-remote-mcp-servers](https://github.com/jaw9c/awesome-remote-mcp-servers) | 1,143 | 2026-09-24 | 127 | Independent remote list with structured rows |
 | [TensorBlock/awesome-mcp-servers](https://github.com/TensorBlock/awesome-mcp-servers) | 898 | 2026-10-13 | 7,729 | Structured JSON listing IDs and component metadata |
 
-[appcypher/awesome-mcp-servers](https://github.com/appcypher/awesome-mcp-servers) was considered (5,794 stars in the selection audit) but excluded because it was archived on 2026-05-06 and did not have an API-recognized reuse license. The official reference-server repository is useful component evidence, not an additional general catalog feed. Source inclusion requires maintained, openly reusable data and useful coverage; being the most starred is insufficient.
+[appcypher/awesome-mcp-servers](https://github.com/appcypher/awesome-mcp-servers) was considered (5,795 stars in the final selection audit) but excluded because it was archived, last pushed on 2026-05-06, and did not have an API-recognized reuse license. The official reference-server repository is useful component evidence, not an additional general catalog feed. Source inclusion requires maintained, openly reusable data and useful coverage; being the most starred is insufficient.
 
 `inputs/` retains credential-sanitized source snapshots, `observations/` contains normalized discoveries, and `dist/catalog.json` contains components with a strong identity. Unsupported or ambiguous discoveries remain public in observations. All six sources contribute provenance to canonical records; for example, GitHub's MCP component combines the Registry, punkpeye, wong2, TensorBlock and explicit Nessie curation. Eleven canonical entries currently have multiple sources.
 
