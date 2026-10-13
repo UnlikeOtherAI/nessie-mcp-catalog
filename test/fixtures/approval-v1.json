@@ -1,0 +1,23 @@
+{
+  "policyVersion": "approval-policy-v1",
+  "materialDigest": "65abdd1473f581f1ad9029ed0688e235e1649540ed3d74bf853f182c27dfeb1e",
+  "testedAt": "2026-10-13T00:00:00.000Z",
+  "expiresAt": "2026-10-25T00:00:00.000Z",
+  "nessieRevision": "synthetic-nessie-revision",
+  "suiteRevision": "synthetic-suite-revision",
+  "environment": "isolated-fixture",
+  "testedRemoteIds": [
+    "primary"
+  ],
+  "checks": {
+    "compatibility": "passed",
+    "readOnlyFunctional": "passed",
+    "authScope": "passed",
+    "securityReview": "passed"
+  },
+  "evidenceUrl": "https://example.com/synthetic-results",
+  "decisionUrl": "https://example.com/synthetic-review",
+  "limitations": [
+    "Synthetic fixture only; not a production approval."
+  ]
+}

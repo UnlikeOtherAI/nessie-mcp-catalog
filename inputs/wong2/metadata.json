@@ -1,0 +1,13 @@
+{
+  "repository": "wong2/awesome-mcp-servers",
+  "repositoryId": 895553015,
+  "stars": 4359,
+  "defaultBranch": "main",
+  "commit": "39eb1d76d76e562657f3c657266a504cea159e23",
+  "committedAt": "2026-07-13T12:41:41Z",
+  "fetchedAt": "2026-10-13T18:52:44.395Z",
+  "license": "MIT",
+  "licenseDigest": "2837af1ae1ffc41dad98271e30a7fe9b28943cead4088731911fbca1bc39125a",
+  "inputPath": "README.md",
+  "sanitation": "Credential values and executable defaults removed before persistence; snapshot hash covers sanitized bytes."
+}

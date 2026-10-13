@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "publisher": "UnlikeOtherAI/nessie-mcp-catalog",
+  "sequence": 1,
+  "generatedAt": "2026-10-13T00:00:00.000Z",
+  "complete": true,
+  "catalogPath": "dist/catalog.json",
+  "catalogSha256": "e13fbbbaf8162dc02e59fc6dfe6708f73fcf070c592ba8bfaf0eb3c43ede3685",
+  "entryCount": 1,
+  "sourceSnapshots": [
+    {
+      "id": "official-registry",
+      "kind": "registry",
+      "url": "https://registry.modelcontextprotocol.io/v0.1/servers",
+      "revision": "fixture-v1",
+      "sha256": "ffbc2dfc402782325da71132100e74ff511d1585dd80e4ea196ed4bcace3fef2",
+      "fetchedAt": "2026-10-13T00:00:00.000Z",
+      "license": "CC0-1.0",
+      "adapterVersion": 1,
+      "observations": 1,
+      "status": "complete",
+      "snapshotPath": "inputs/official-registry/snapshot.json"
+    }
+  ]
+}

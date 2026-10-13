@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "sequence": 1,
+  "entries": [
+    {
+      "id": "registry:com.example/weather",
+      "identity": {
+        "kind": "registry",
+        "name": "com.example/weather"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "official-registry",
+          "nativeId": "com.example/weather@1.0.0",
+          "revision": "fixture-v1",
+          "path": null,
+          "url": "https://registry.modelcontextprotocol.io/v0.1/servers",
+          "digest": "ffbc2dfc402782325da71132100e74ff511d1585dd80e4ea196ed4bcace3fef2",
+          "license": "CC0-1.0"
+        }
+      ],
+      "metadata": {
+        "name": "weather",
+        "displayName": "Weather",
+        "description": "Synthetic importer fixture.",
+        "vendor": "Example",
+        "websiteUrl": "https://example.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://example.com/docs",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.example.com/weather",
+          "auth": {
+            "method": "none",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": null,
+            "scopes": []
+          },
+          "version": "1.0.0"
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "materialDigest": "65abdd1473f581f1ad9029ed0688e235e1649540ed3d74bf853f182c27dfeb1e",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "approval": null,
+      "authorship": null
+    }
+  ]
+}

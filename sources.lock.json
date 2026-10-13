@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "snapshots": [
+    {
+      "id": "official-registry",
+      "kind": "registry",
+      "url": "https://registry.modelcontextprotocol.io/v0.1/servers",
+      "revision": "sha256:78c21a36523aa5230803868eede550de02192c5a391fc9e6adf344f8bda54d81",
+      "sha256": "78c21a36523aa5230803868eede550de02192c5a391fc9e6adf344f8bda54d81",
+      "fetchedAt": "2026-10-13T18:48:38.019Z",
+      "license": "CC0-1.0",
+      "adapterVersion": 1,
+      "observations": 43035,
+      "status": "complete",
+      "snapshotPath": "inputs/official-registry/snapshot.json"
+    },
+    {
+      "id": "punkpeye",
+      "kind": "markdown",
+      "url": "https://raw.githubusercontent.com/punkpeye/awesome-mcp-servers/cc7f1f42c3fa8ced6fd5c0e02ea366ef7ed8cf1b/README.md",
+      "revision": "cc7f1f42c3fa8ced6fd5c0e02ea366ef7ed8cf1b",
+      "sha256": "18ce93f729570880e700d0e428c42145d4cdf3c2e61ef9ca1497439d75df990a",
+      "fetchedAt": "2026-10-13T18:52:43.181Z",
+      "license": "MIT",
+      "adapterVersion": 1,
+      "observations": 4210,
+      "status": "complete",
+      "snapshotPath": "inputs/punkpeye/snapshot.md"
+    },
+    {
+      "id": "wong2",
+      "kind": "markdown",
+      "url": "https://raw.githubusercontent.com/wong2/awesome-mcp-servers/39eb1d76d76e562657f3c657266a504cea159e23/README.md",
+      "revision": "39eb1d76d76e562657f3c657266a504cea159e23",
+      "sha256": "10a1a1bdfaef93bf64db78daa8edc9a5629343506def238bd37489f42588f0d6",
+      "fetchedAt": "2026-10-13T18:52:44.395Z",
+      "license": "MIT",
+      "adapterVersion": 1,
+      "observations": 515,
+      "status": "complete",
+      "snapshotPath": "inputs/wong2/snapshot.md"
+    },
+    {
+      "id": "punkpeye-remote",
+      "kind": "markdown",
+      "url": "https://raw.githubusercontent.com/punkpeye/awesome-remote-mcp-servers/325234c8091c265e059e3196965a6cb8a38f0d13/README.md",
+      "revision": "325234c8091c265e059e3196965a6cb8a38f0d13",
+      "sha256": "e07f25d622649a939e1e9db80579d852394c0a110824fefbc0ca04ef32e3ddf7",
+      "fetchedAt": "2026-10-13T18:52:45.391Z",
+      "license": "MIT",
+      "adapterVersion": 1,
+      "observations": 928,
+      "status": "complete",
+      "snapshotPath": "inputs/punkpeye-remote/snapshot.md"
+    },
+    {
+      "id": "jaw9c-remote",
+      "kind": "markdown",
+      "url": "https://raw.githubusercontent.com/jaw9c/awesome-remote-mcp-servers/bad1d9fc57875ea9062497fc0321e50f1ce1994e/README.md",
+      "revision": "bad1d9fc57875ea9062497fc0321e50f1ce1994e",
+      "sha256": "6bec3755d2c9b39b3a56f5f81176b299f0ce471496c1a2b633553468f357294a",
+      "fetchedAt": "2026-10-13T18:52:46.299Z",
+      "license": "MIT",
+      "adapterVersion": 1,
+      "observations": 127,
+      "status": "complete",
+      "snapshotPath": "inputs/jaw9c-remote/snapshot.md"
+    },
+    {
+      "id": "tensorblock",
+      "kind": "tensorblock",
+      "url": "https://raw.githubusercontent.com/TensorBlock/awesome-mcp-servers/f0651765f3101bce0f40076ebbae753b53fdd8bd/data/catalog.json",
+      "revision": "f0651765f3101bce0f40076ebbae753b53fdd8bd",
+      "sha256": "5e93cfd2ac067c5136f76d8bf89f17d58f17c370147ac4c948c87a098facb1fa",
+      "fetchedAt": "2026-10-13T18:52:47.353Z",
+      "license": "MIT",
+      "adapterVersion": 1,
+      "observations": 7729,
+      "status": "complete",
+      "snapshotPath": "inputs/tensorblock/snapshot.json"
+    }
+  ]
+}
