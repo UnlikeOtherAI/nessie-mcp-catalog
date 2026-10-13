@@ -5,13 +5,14 @@ import { ManifestSchema } from '../src/wire.ts'
 import { assertGeneratedTree, assertTrustedPr, CATALOG_REPOSITORY, CATALOG_REPOSITORY_ID, REFRESH_BRANCH,
   waitForRefreshGate } from '../src/refresh-gate.ts'
 import type { CheckRun, GateExpectation, RefreshPr, RequiredCheck } from '../src/refresh-gate.ts'
+import { catalogApiEndpoint, catalogCheckRunPath } from '../src/github-api.ts'
 
 const repo = CATALOG_REPOSITORY
 const branch = REFRESH_BRANCH
 const run = (command: string, args: string[]): string => execFileSync(command, args, {
   encoding: 'utf8', maxBuffer: 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'],
 }).trim()
-const api = (path: string): unknown => JSON.parse(run('gh', ['api', `repos/${repo}/${path}`]))
+const api = (path: string): unknown => JSON.parse(run('gh', ['api', catalogApiEndpoint(path)]))
 const wait = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms))
 const paths = (text: string): string[] => text.split('\n').filter(Boolean)
 const trustedBase = run('git', ['rev-parse', 'HEAD'])
@@ -74,16 +75,16 @@ await waitForRefreshGate(expected, {
   },
   run: async (id) => api(`actions/runs/${id}`) as CheckRun,
   approve: async (id) => {
-    run('gh', ['api', '--method', 'POST', `repos/${repo}/actions/runs/${id}/approve`])
+    run('gh', ['api', '--method', 'POST', catalogApiEndpoint(`actions/runs/${id}/approve`)])
     console.log(`Approved unchanged generated-only validator run ${id} for PR #${pr.number}`)
   },
   requiredChecks: async (prRun) => {
     const jobs = api(`actions/runs/${prRun.id}/jobs?per_page=100`) as {
       total_count: number; jobs: { id: number; name: string; check_run_url: string }[] }
     const job = jobs.jobs.filter((item) => item.name === 'Catalog checks')
-    if (jobs.total_count > 100 || job.length !== 1
-      || job[0].check_run_url !== `https://api.github.com/repos/${repo}/check-runs/${job[0].id}`) throw new Error('Unexpected required validator job')
-    const check = api(`check-runs/${job[0].id}`) as { app: { id: number }; head_sha: string; status: string; conclusion: string; name: string }
+    if (jobs.total_count > 100 || job.length !== 1) throw new Error('Unexpected required validator job')
+    const check = api(catalogCheckRunPath(job[0].check_run_url)) as {
+      app: { id: number }; head_sha: string; status: string; conclusion: string; name: string }
     if (check.app.id !== 15368 || check.head_sha !== head || check.name !== 'Catalog checks'
       || check.status !== 'completed' || check.conclusion !== 'success') throw new Error('Required validator check authority changed')
     let output: string
