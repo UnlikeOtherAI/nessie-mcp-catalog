@@ -1,4 +1,62 @@
 {
   "schemaVersion": 1,
-  "entries": []
+  "entries": [
+    {
+      "sourceId": "official-registry",
+      "nativeId": "io.github.zenmode87/zenmode@1.0.0",
+      "firstMissedAt": "2026-10-14T03:35:22.944Z",
+      "lastCountedAt": "2026-10-14T03:35:22.944Z",
+      "misses": 1,
+      "observation": {
+        "nativeId": "io.github.zenmode87/zenmode@1.0.0",
+        "sourceRef": {
+          "sourceId": "official-registry",
+          "nativeId": "io.github.zenmode87/zenmode@1.0.0",
+          "revision": "sha256:2a42bc81212ad0132a92e0e2ac2503b4877ae7d8cf041690429d433423369af2",
+          "path": null,
+          "url": "https://registry.modelcontextprotocol.io/v0.1/servers",
+          "digest": "92173a9741899f90d0a1e6a2cedd432ce356d547b32519001938bcc8a37098c0",
+          "license": "CC0-1.0"
+        },
+        "identity": {
+          "kind": "registry",
+          "name": "io.github.zenmode87/zenmode"
+        },
+        "metadata": {
+          "name": "zenmode",
+          "displayName": "ZenMode",
+          "description": "Read LinkedIn outreach campaigns, contacts and replies, and manage campaign leads and targeting.",
+          "vendor": "io.github.zenmode87",
+          "websiteUrl": "https://www.zen-mode.io/integrations/claude",
+          "repositoryUrl": "https://github.com/zenmode87/zenmode-mcp",
+          "documentationUrl": null,
+          "categories": [],
+          "tags": []
+        },
+        "remotes": [
+          {
+            "id": "remote-1",
+            "transport": "http",
+            "url": "https://www.zen-mode.io/api/mcp",
+            "auth": {
+              "method": "unknown",
+              "headerName": null,
+              "valuePrefix": null,
+              "hint": null,
+              "scopes": []
+            },
+            "version": "1.0.0"
+          }
+        ],
+        "packages": [],
+        "lifecycle": "active",
+        "selected": true,
+        "links": [
+          "https://github.com/zenmode87/zenmode-mcp",
+          "https://www.zen-mode.io/integrations/claude"
+        ],
+        "unresolvedReason": null
+      }
+    }
+  ]
 }
