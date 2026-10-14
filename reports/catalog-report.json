@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "sequence": 3,
-  "generatedAt": "2026-10-13T20:11:45.297Z",
+  "sequence": 4,
+  "generatedAt": "2026-10-14T03:35:22.944Z",
   "sources": [
     {
       "id": "official-registry",
-      "revision": "sha256:2a42bc81212ad0132a92e0e2ac2503b4877ae7d8cf041690429d433423369af2",
-      "observations": 43060,
-      "remoteCandidates": 27347
+      "revision": "sha256:089d343578b876e39f20051908f370d4de1268609bad3b23842ec736c9558efd",
+      "observations": 43192,
+      "remoteCandidates": 27392
     },
     {
       "id": "punkpeye",
@@ -35,20 +35,20 @@
     },
     {
       "id": "tensorblock",
-      "revision": "f0651765f3101bce0f40076ebbae753b53fdd8bd",
+      "revision": "cfe78ddaa9a07652fa56997a756116414c67065a",
       "observations": 7729,
       "remoteCandidates": 65
     }
   ],
-  "observations": 56569,
-  "canonicalEntries": 43067,
-  "remoteEntries": 27353,
-  "packageOnlyEntries": 15064,
+  "observations": 56701,
+  "canonicalEntries": 43200,
+  "remoteEntries": 27399,
+  "packageOnlyEntries": 15149,
   "multiSourceEntries": 11,
   "approvedEntries": 0,
   "madeByNessieEntries": 0,
-  "missingSourceObservations": 0,
-  "catalogBytes": 51499908,
+  "missingSourceObservations": 1,
+  "catalogBytes": 51648866,
   "unresolvedObservations": 13498,
   "limitations": [
     "Directory observations without a strong identity binding remain pending; remote candidates are not tested installations.",
