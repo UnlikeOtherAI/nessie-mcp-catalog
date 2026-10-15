@@ -907,6 +907,9 @@ Entries with a [Glama connector](https://glama.ai/mcp/connectors) badge have bee
 - [reusefulshop](https://reusefulshop.com) `https://reusefulshop.com/mcp`
   [![reusefulshop MCP connector](https://glama.ai/mcp/connectors/io.github.Auricah1/reusefulshop/badges/score.svg)](https://glama.ai/mcp/connectors/io.github.Auricah1/reusefulshop)
   🔓 - What used items sell for: price estimates, deal verdicts, history and real sold prices.
+- [ScentVerdict](https://scentverdict.com) `https://scentverdict.com/mcp`
+  [![ScentVerdict MCP connector](https://glama.ai/mcp/connectors/com.scentverdict/fragrances/badges/score.svg)](https://glama.ai/mcp/connectors/com.scentverdict/fragrances)
+  🔓 - Look up fragrances: verdicts, notes, drydowns, similar picks and bottle prices for your country.
 - [Sense2](https://sense2.com.au) `https://sense2.com.au/api/mcp`
   🔓 - Search 4,000+ Australian promotional products, get quantity-break quotes, browse categories and case studies.
 - [Stienhardt Diamond MCP](https://stienhardt.com/agents.md?utm_source=awesome_remote_mcp&utm_medium=directory&utm_campaign=diamond_mcp) `https://diamond-mcp.stienhardt.workers.dev/mcp`
@@ -1074,6 +1077,9 @@ Entries with a [Glama connector](https://glama.ai/mcp/connectors) badge have bee
 - [Business Verify](https://mbiyepyh.gensparkclaw.com/docs) `https://mbiyepyh.gensparkclaw.com/mcp`
   [![Business Verify MCP connector](https://glama.ai/mcp/connectors/com.gensparkclaw.mbiyepyh/business-verify/badges/score.svg)](https://glama.ai/mcp/connectors/com.gensparkclaw.mbiyepyh/business-verify)
   🔑 - Check a US business's status, formation date and registered agent by name and state; $0.05 a call.
+- [CalcBright](https://calcbright.com/developers) `https://calcbright.com/mcp`
+  [![CalcBright MCP connector](https://glama.ai/mcp/connectors/io.github.drshairsultan/calcbright/badges/score.svg)](https://glama.ai/mcp/connectors/io.github.drshairsultan/calcbright)
+  🔓 - 100+ calculators: mortgage, take-home pay, sales tax/VAT, BMI, dates, units, live currency and gold prices.
 - [Candor Finance](https://candor.money) `https://api.candor.money/mcp`
   [![Candor Finance MCP connector](https://glama.ai/mcp/connectors/money.candor/candor-finance/badges/score.svg)](https://glama.ai/mcp/connectors/money.candor/candor-finance)
   🔐 - Personal-finance workspace: connected accounts, spending, budgets, goals and investments.
@@ -1460,6 +1466,9 @@ Entries with a [Glama connector](https://glama.ai/mcp/connectors) badge have bee
 - [Playgama](https://playgama.com/mcp/) `https://developer.playgama.com/api/mcp`
   [![Playgama MCP connector](https://glama.ai/mcp/connectors/com.playgama.developer/playgama-developer-cabinet/badges/score.svg)](https://glama.ai/mcp/connectors/com.playgama.developer/playgama-developer-cabinet)
   🔑 - Publish and manage HTML5 games on Playgama: game form, builds, covers, in-app catalog, sandbox link.
+- [Plazmi](https://plazmi.gg) `https://plazmi.gg/mcp`
+  [![Plazmi MCP connector](https://glama.ai/mcp/connectors/gg.plazmi/plazmi/badges/score.svg)](https://glama.ai/mcp/connectors/gg.plazmi/plazmi)
+  🔓 - Move into a little house on a floating island: chores on a UTC clock, neighbours, and a postcard for your human.
 - [SECOND STRIKE](https://secondstrike.io/#/ai) `https://secondstrike-server-zgqvqzdrta-uc.a.run.app/mcp`
   [![SECOND STRIKE MCP connector](https://glama.ai/mcp/connectors/io.github.KyleClouthier/secondstrike/badges/score.svg)](https://glama.ai/mcp/connectors/io.github.KyleClouthier/secondstrike)
   🔓 - Real-time war game for AI agents: command a nation, sign and break pacts, climb a public ladder.
@@ -2524,6 +2533,9 @@ Entries with a [Glama connector](https://glama.ai/mcp/connectors) badge have bee
 - [TweetFeed](https://tweetfeed.live) `https://mcp.tweetfeed.live/`
   [![TweetFeed MCP connector](https://glama.ai/mcp/connectors/io.github.0xDanielLopez/tweetfeed/badges/score.svg)](https://glama.ai/mcp/connectors/io.github.0xDanielLopez/tweetfeed)
   🔓 - IOCs (URLs, domains, IPs, hashes) shared on X by the security community: lookups, tags, trends, campaigns.
+- [vuln-intel](https://vulntel.com) `https://mcp.rozetyp.com/mcp`
+  [![vuln-intel MCP connector](https://glama.ai/mcp/connectors/io.github.rozetyp/vuln-intel/badges/score.svg)](https://glama.ai/mcp/connectors/io.github.rozetyp/vuln-intel)
+  🔓 - CVE intel for bug-bounty agents: CVE claim fact-checks, attack approaches from HackerOne reports. Free key for calls.
 - [Weio site check](https://weio.ai/services/site-check-api.html?utm_source=github&utm_medium=list&utm_campaign=awesome-mcp) `https://weio.ai/mcp`
   [![Weio site check MCP connector](https://glama.ai/mcp/connectors/ai.weio/site-check/badges/score.svg)](https://glama.ai/mcp/connectors/ai.weio/site-check)
   🔓 - HTTPS certificate check and published business facts (CMS, mobile viewport, role emails, phones) for any site.
@@ -2696,6 +2708,9 @@ Entries with a [Glama connector](https://glama.ai/mcp/connectors) badge have bee
   🔐 - Kurdish language tools: translate 250+ languages, spell and grammar check, transliterate Sorani, transcribe audio.
 
 ### 🚆 <a name="travel--transportation"></a>Travel & Transportation
+- [Travel Risk API](https://travelriskapi.com/docs/mcp) `https://api.travelriskapi.com/mcp`
+  [![Travel Risk API MCP connector](https://glama.ai/mcp/connectors/com.travelriskapi/travel-risk-api/badges/score.svg)](https://glama.ai/mcp/connectors/com.travelriskapi/travel-risk-api)
+  🔐 - Country risk scores, government travel advisories, disaster and conflict alerts, flight status and in-flight Wi-Fi.
 - [WhichTrim](https://whichtrim.com) `https://whichtrim.com/portal/mcp`
   [![WhichTrim MCP connector](https://glama.ai/mcp/connectors/com.whichtrim/vehicle-records/badges/score.svg)](https://glama.ai/mcp/connectors/com.whichtrim/vehicle-records)
   🔓 - US vehicle recalls, complaints, fuel economy, crash ratings, VIN decoding and OBD-II codes.
