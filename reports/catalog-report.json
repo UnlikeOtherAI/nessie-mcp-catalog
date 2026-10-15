@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "sequence": 4,
-  "generatedAt": "2026-10-14T03:35:22.944Z",
+  "sequence": 5,
+  "generatedAt": "2026-10-15T03:35:04.330Z",
   "sources": [
     {
       "id": "official-registry",
-      "revision": "sha256:089d343578b876e39f20051908f370d4de1268609bad3b23842ec736c9558efd",
-      "observations": 43192,
-      "remoteCandidates": 27392
+      "revision": "sha256:efe4cc2887fdcf95895bba35ebd130afbdcce3c4f630a8adc7f0f4ce1eceb253",
+      "observations": 43754,
+      "remoteCandidates": 27841
     },
     {
       "id": "punkpeye",
-      "revision": "cc7f1f42c3fa8ced6fd5c0e02ea366ef7ed8cf1b",
-      "observations": 4210,
+      "revision": "9fc3a0d68332df4d47d6bef42d760d2f22f88b09",
+      "observations": 4214,
       "remoteCandidates": 0
     },
     {
@@ -23,8 +23,8 @@
     },
     {
       "id": "punkpeye-remote",
-      "revision": "325234c8091c265e059e3196965a6cb8a38f0d13",
-      "observations": 928,
+      "revision": "0fa060c1aa42a9fa2d3425965f16518122e504b5",
+      "observations": 933,
       "remoteCandidates": 0
     },
     {
@@ -35,21 +35,21 @@
     },
     {
       "id": "tensorblock",
-      "revision": "cfe78ddaa9a07652fa56997a756116414c67065a",
-      "observations": 7729,
-      "remoteCandidates": 65
+      "revision": "07adbdcec907d819625d0ae5349c9d63f4e6ba4d",
+      "observations": 8492,
+      "remoteCandidates": 797
     }
   ],
-  "observations": 56701,
-  "canonicalEntries": 43200,
-  "remoteEntries": 27399,
-  "packageOnlyEntries": 15149,
+  "observations": 58035,
+  "canonicalEntries": 43778,
+  "remoteEntries": 27862,
+  "packageOnlyEntries": 15257,
   "multiSourceEntries": 11,
   "approvedEntries": 0,
   "madeByNessieEntries": 0,
-  "missingSourceObservations": 1,
-  "catalogBytes": 51648866,
-  "unresolvedObservations": 13498,
+  "missingSourceObservations": 472,
+  "catalogBytes": 52347205,
+  "unresolvedObservations": 14270,
   "limitations": [
     "Directory observations without a strong identity binding remain pending; remote candidates are not tested installations.",
     "All upstream trust/verification claims remain upstream assertions. No third-party server was executed or approved."
