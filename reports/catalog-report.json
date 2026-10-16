@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "sequence": 5,
-  "generatedAt": "2026-10-15T03:35:04.330Z",
+  "sequence": 6,
+  "generatedAt": "2026-10-16T03:35:16.229Z",
   "sources": [
     {
       "id": "official-registry",
-      "revision": "sha256:efe4cc2887fdcf95895bba35ebd130afbdcce3c4f630a8adc7f0f4ce1eceb253",
-      "observations": 43754,
-      "remoteCandidates": 27841
+      "revision": "sha256:a2869617802f6949b2585afddd14fef47cccd5da7a69a903489167869ccbf5e1",
+      "observations": 44463,
+      "remoteCandidates": 28418
     },
     {
       "id": "punkpeye",
-      "revision": "9fc3a0d68332df4d47d6bef42d760d2f22f88b09",
-      "observations": 4214,
+      "revision": "8a8b37d9a4c1c5e4fda88e6a56ba23d7755f6236",
+      "observations": 4239,
       "remoteCandidates": 0
     },
     {
@@ -23,8 +23,8 @@
     },
     {
       "id": "punkpeye-remote",
-      "revision": "0fa060c1aa42a9fa2d3425965f16518122e504b5",
-      "observations": 933,
+      "revision": "5223236cc00535dcab06900e0445f37b34f46402",
+      "observations": 1071,
       "remoteCandidates": 0
     },
     {
@@ -35,21 +35,21 @@
     },
     {
       "id": "tensorblock",
-      "revision": "07adbdcec907d819625d0ae5349c9d63f4e6ba4d",
+      "revision": "e637c57d8a22957fb37d5c5a698bc79f89f24b2c",
       "observations": 8492,
       "remoteCandidates": 797
     }
   ],
-  "observations": 58035,
-  "canonicalEntries": 43778,
-  "remoteEntries": 27862,
-  "packageOnlyEntries": 15257,
+  "observations": 58907,
+  "canonicalEntries": 44493,
+  "remoteEntries": 28442,
+  "packageOnlyEntries": 15385,
   "multiSourceEntries": 11,
   "approvedEntries": 0,
   "madeByNessieEntries": 0,
-  "missingSourceObservations": 472,
-  "catalogBytes": 52347205,
-  "unresolvedObservations": 14270,
+  "missingSourceObservations": 479,
+  "catalogBytes": 53213627,
+  "unresolvedObservations": 14433,
   "limitations": [
     "Directory observations without a strong identity binding remain pending; remote candidates are not tested installations.",
     "All upstream trust/verification claims remain upstream assertions. No third-party server was executed or approved."
