@@ -19,7 +19,9 @@ Stars below were observed through GitHub's API on 2026-10-13. They informed sour
 
 [appcypher/awesome-mcp-servers](https://github.com/appcypher/awesome-mcp-servers) was considered (5,795 stars in the final selection audit) but excluded because it was archived, last pushed on 2026-05-06, and did not have an API-recognized reuse license. The official reference-server repository is useful component evidence, not an additional general catalog feed. Source inclusion requires maintained, openly reusable data and useful coverage; being the most starred is insufficient.
 
-`inputs/` retains credential-sanitized source snapshots, `observations/` contains normalized discoveries, and `dist/catalog.json` contains components with a strong identity. Unsupported or ambiguous discoveries remain public in observations. All six sources contribute provenance to canonical records; for example, GitHub's MCP component combines the Registry, punkpeye, wong2, TensorBlock and explicit Nessie curation. Eleven canonical entries currently have multiple sources.
+`inputs/` retains credential-sanitized source snapshots, `observations/` contains normalized discoveries, and `dist/catalog.json` contains components with a strong identity. Unsupported or ambiguous discoveries remain public in observations. All six sources contribute provenance to canonical records; for example, GitHub's MCP component combines the Registry, punkpeye, wong2, TensorBlock and explicit Nessie curation. Twelve canonical entries currently have multiple sources.
+
+The [Parallel Search curation note](docs/parallel-search.md) shows how publisher documentation updates an existing connection while retaining discovery provenance and leaving approval decisions separate.
 
 ## Two independent Nessie flags
 

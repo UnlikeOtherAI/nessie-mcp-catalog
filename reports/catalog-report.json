@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "sequence": 6,
-  "generatedAt": "2026-10-16T03:35:16.229Z",
+  "sequence": 7,
+  "generatedAt": "2026-10-17T17:32:36.997Z",
   "sources": [
     {
       "id": "official-registry",
@@ -44,11 +44,11 @@
   "canonicalEntries": 44493,
   "remoteEntries": 28442,
   "packageOnlyEntries": 15385,
-  "multiSourceEntries": 11,
+  "multiSourceEntries": 12,
   "approvedEntries": 0,
   "madeByNessieEntries": 0,
   "missingSourceObservations": 479,
-  "catalogBytes": 53213627,
+  "catalogBytes": 53214160,
   "unresolvedObservations": 14433,
   "limitations": [
     "Directory observations without a strong identity binding remain pending; remote candidates are not tested installations.",
