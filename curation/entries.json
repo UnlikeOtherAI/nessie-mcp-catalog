@@ -651,6 +651,39 @@
       "reviewPath": null,
       "authorship": null,
       "legacyLibraryKey": "semgrep"
+    },
+    {
+      "id": "registry:ai.parallel/search-mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "ai.parallel/search-mcp"
+      },
+      "metadata": {
+        "description": "Search the web and fetch page content without an account or API key, subject to free-tier rate limits.",
+        "documentationUrl": "https://docs.parallel.ai/integrations/mcp/search-mcp"
+      },
+      "remotes": [
+        {
+          "id": "remote-1",
+          "transport": "http",
+          "url": "https://search.parallel.ai/mcp",
+          "auth": {
+            "method": "none",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "No account or API key required. Anonymous free-tier rate limits apply.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "sourceUrl": "https://github.com/parallel-web/search-mcp/blob/ac8e207b9fb1d5febb95d95b90c3a107ebdbdcbc/README.md",
+      "sourceRevision": "ac8e207b9fb1d5febb95d95b90c3a107ebdbdcbc",
+      "reason": "Update the existing ai.parallel/search-mcp Registry component discovered as official-registry:ai.parallel/search-mcp@1.0.0. Its declared publisher repository is parallel-web/search-mcp; that component's pinned README specifies the current anonymous Streamable HTTP endpoint, transport and authentication. Retain the strong Registry identity and original source reference; do not bind unrelated directory listings by URL or name. This is a connection metadata correction, not approval or authorship evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
     }
   ]
 }
