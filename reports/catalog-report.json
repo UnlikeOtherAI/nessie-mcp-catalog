@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "sequence": 6,
-  "generatedAt": "2026-10-16T03:35:16.229Z",
+  "sequence": 7,
+  "generatedAt": "2026-11-17T10:31:57.000Z",
   "sources": [
     {
       "id": "official-registry",
@@ -41,15 +41,15 @@
     }
   ],
   "observations": 58907,
-  "canonicalEntries": 44493,
-  "remoteEntries": 28442,
+  "canonicalEntries": 44522,
+  "remoteEntries": 28471,
   "packageOnlyEntries": 15385,
-  "multiSourceEntries": 11,
+  "multiSourceEntries": 43,
   "approvedEntries": 0,
   "madeByNessieEntries": 0,
   "missingSourceObservations": 479,
-  "catalogBytes": 53213627,
-  "unresolvedObservations": 14433,
+  "catalogBytes": 53264859,
+  "unresolvedObservations": 14416,
   "limitations": [
     "Directory observations without a strong identity binding remain pending; remote candidates are not tested installations.",
     "All upstream trust/verification claims remain upstream assertions. No third-party server was executed or approved."

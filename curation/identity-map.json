@@ -115,6 +115,192 @@
       },
       "evidenceUrl": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
       "reason": "This table row explicitly names DeepWiki and the Devin operator with its legacy SSE route; it is not every service on devin.ai."
+    },
+    {
+      "sourceId": "jaw9c-remote",
+      "nativeId": "Remote MCP Server List:https://zoom.us/",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.zoom/zoom-workspace"
+      },
+      "evidenceUrl": "https://github.com/zoom/zoom-plugin-claude/blob/main/skills/zoom-mcp/references/servers.md",
+      "reason": "The row names Zoom and its documented Zoom MCP Server endpoint, which the Zoom publisher Registry record declares for this component."
+    },
+    {
+      "sourceId": "punkpeye-remote",
+      "nativeId": "Servers:https://atlassian.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "atlassian.com",
+        "component": "atlassian"
+      },
+      "evidenceUrl": "https://atlassian.github.io/atlassian-mcp-server/",
+      "reason": "The row names Atlassian's own remote MCP server on mcp.atlassian.com for Jira and Confluence; it is the same Atlassian component."
+    },
+    {
+      "sourceId": "jaw9c-remote",
+      "nativeId": "Remote MCP Server List:https://atlassian.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "atlassian.com",
+        "component": "atlassian"
+      },
+      "evidenceUrl": "https://atlassian.github.io/atlassian-mcp-server/",
+      "reason": "The row names Atlassian as operator and its legacy SSE route on mcp.atlassian.com; current configuration is kept in curation."
+    },
+    {
+      "sourceId": "punkpeye-remote",
+      "nativeId": "Servers:https://box.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "box.com",
+        "component": "box"
+      },
+      "evidenceUrl": "https://developer.box.com/guides/box-mcp",
+      "reason": "The row names Box and links Box's own hosted server on mcp.box.com, which Box's developer guide documents."
+    },
+    {
+      "sourceId": "jaw9c-remote",
+      "nativeId": "Remote MCP Server List:https://box.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "box.com",
+        "component": "box"
+      },
+      "evidenceUrl": "https://developer.box.com/guides/box-mcp",
+      "reason": "The row names Box as operator of the mcp.box.com server that Box's developer guide documents."
+    },
+    {
+      "sourceId": "punkpeye-remote",
+      "nativeId": "Servers:https://asana.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "asana.com",
+        "component": "asana"
+      },
+      "evidenceUrl": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
+      "reason": "The row names Asana and links Asana's own server on mcp.asana.com; it is the same Asana component."
+    },
+    {
+      "sourceId": "jaw9c-remote",
+      "nativeId": "Remote MCP Server List:https://asana.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "asana.com",
+        "component": "asana"
+      },
+      "evidenceUrl": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
+      "reason": "The row names Asana as operator and its legacy SSE route on mcp.asana.com; current configuration is kept in curation."
+    },
+    {
+      "sourceId": "punkpeye-remote",
+      "nativeId": "Servers:https://clickup.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "clickup.com",
+        "component": "clickup"
+      },
+      "evidenceUrl": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+      "reason": "The row names ClickUp and links ClickUp's own server on mcp.clickup.com, as documented by ClickUp."
+    },
+    {
+      "sourceId": "jaw9c-remote",
+      "nativeId": "Remote MCP Server List:https://clickup.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "clickup.com",
+        "component": "clickup"
+      },
+      "evidenceUrl": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+      "reason": "The row names ClickUp as operator of the documented mcp.clickup.com server."
+    },
+    {
+      "sourceId": "punkpeye-remote",
+      "nativeId": "Servers:https://hubspot.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "hubspot.com",
+        "component": "hubspot"
+      },
+      "evidenceUrl": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+      "reason": "The row names HubSpot and links a client-specific path on HubSpot's own mcp.hubspot.com server; it is the same HubSpot component."
+    },
+    {
+      "sourceId": "jaw9c-remote",
+      "nativeId": "Remote MCP Server List:https://attio.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "attio.com",
+        "component": "attio"
+      },
+      "evidenceUrl": "https://mcp.attio.com/",
+      "reason": "The row names Attio as operator of its own mcp.attio.com server, which Attio documents."
+    },
+    {
+      "sourceId": "punkpeye-remote",
+      "nativeId": "Servers:https://intercom.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "intercom.com",
+        "component": "intercom"
+      },
+      "evidenceUrl": "https://developers.intercom.com/docs/guides/mcp",
+      "reason": "The row names Intercom and links Intercom's own mcp.intercom.com server, as Intercom documents."
+    },
+    {
+      "sourceId": "jaw9c-remote",
+      "nativeId": "Remote MCP Server List:https://intercom.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "intercom.com",
+        "component": "intercom"
+      },
+      "evidenceUrl": "https://developers.intercom.com/docs/guides/mcp",
+      "reason": "The row names Intercom as operator and its deprecated SSE route on mcp.intercom.com; current configuration is kept in curation."
+    },
+    {
+      "sourceId": "jaw9c-remote",
+      "nativeId": "Remote MCP Server List:https://calendly.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "calendly.com",
+        "component": "calendly"
+      },
+      "evidenceUrl": "https://developer.calendly.com/docs/mcp/calendly-mcp-server",
+      "reason": "The row names Calendly as operator of its own mcp.calendly.com server, which Calendly documents."
+    },
+    {
+      "sourceId": "punkpeye-remote",
+      "nativeId": "Servers:https://mongodb.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "mongodb.com",
+        "component": "atlas-managed-mcp"
+      },
+      "evidenceUrl": "https://www.mongodb.com/docs/mcp-server/overview/",
+      "reason": "The row names MongoDB and links MongoDB's own managed server on mcp.mongodb.com; it is the same Atlas Managed MCP component."
+    },
+    {
+      "sourceId": "jaw9c-remote",
+      "nativeId": "Remote MCP Server List:https://docs.cloud.google.com/bigquery/docs/reference/mcp",
+      "identity": {
+        "kind": "remote",
+        "providerId": "googleapis.com",
+        "component": "bigquery"
+      },
+      "evidenceUrl": "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+      "reason": "The row names Google as operator of the BigQuery MCP endpoint on bigquery.googleapis.com, which Google documents."
+    },
+    {
+      "sourceId": "punkpeye-remote",
+      "nativeId": "Servers:https://tavily.com/",
+      "identity": {
+        "kind": "remote",
+        "providerId": "tavily.com",
+        "component": "tavily"
+      },
+      "evidenceUrl": "https://docs.tavily.com/documentation/mcp",
+      "reason": "The row names Tavily and links Tavily's own hosted server on mcp.tavily.com, which Tavily documents."
     }
   ]
 }
