@@ -139,20 +139,20 @@
       },
       "metadata": {
         "name": "atlassian",
-        "displayName": "Atlassian (Jira & Confluence)",
-        "description": "Work with Jira issues and Confluence pages via the official Atlassian remote MCP server.",
+        "displayName": "Atlassian (Jira, Confluence & Bitbucket)",
+        "description": "Search, create and update Jira issues, Confluence pages and Bitbucket Cloud work through the Atlassian Rovo MCP server.",
         "vendor": "Atlassian",
-        "websiteUrl": null,
+        "websiteUrl": "https://www.atlassian.com",
         "repositoryUrl": null,
-        "documentationUrl": "https://www.atlassian.com/platform/remote-mcp-server",
+        "documentationUrl": "https://atlassian.github.io/atlassian-mcp-server/",
         "categories": [],
         "tags": []
       },
       "remotes": [
         {
           "id": "primary",
-          "transport": "sse",
-          "url": "https://mcp.atlassian.com/v1/sse",
+          "transport": "http",
+          "url": "https://mcp.atlassian.com/v2/mcp",
           "auth": {
             "method": "oauth2",
             "headerName": null,
@@ -165,9 +165,9 @@
       ],
       "packages": [],
       "lifecycle": "active",
-      "sourceUrl": "https://www.atlassian.com/platform/remote-mcp-server",
-      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
-      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence.",
+      "sourceUrl": "https://atlassian.github.io/atlassian-mcp-server/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Migrated from Nessie CURATED_MCP_LIBRARY and corrected on 2026-11-17 against current vendor documentation. Atlassian's MCP documentation recommends https://mcp.atlassian.com/v2/mcp for all clients and ends the legacy /v1/sse endpoint after 30 June 2026, so the remote moved from /v1/sse to /v2/mcp. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (auth.atlassian.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
       "nessieApproved": false,
       "madeByNessie": false,
       "reviewPath": null,
@@ -184,24 +184,24 @@
       "metadata": {
         "name": "asana",
         "displayName": "Asana",
-        "description": "Tasks, projects and teams via the official Asana MCP server.",
+        "description": "Read and update Asana tasks, projects, portfolios and goals.",
         "vendor": "Asana",
-        "websiteUrl": null,
+        "websiteUrl": "https://asana.com",
         "repositoryUrl": null,
-        "documentationUrl": "https://developers.asana.com/docs/using-asanas-mcp-server",
+        "documentationUrl": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
         "categories": [],
         "tags": []
       },
       "remotes": [
         {
           "id": "primary",
-          "transport": "sse",
-          "url": "https://mcp.asana.com/sse",
+          "transport": "http",
+          "url": "https://mcp.asana.com/v2/mcp",
           "auth": {
             "method": "oauth2",
             "headerName": null,
             "valuePrefix": null,
-            "hint": "Sign in with your Asana account when prompted.",
+            "hint": "Sign in with your Asana account. This needs an Asana MCP app registered by the Nessie operator.",
             "scopes": []
           },
           "version": null
@@ -209,9 +209,9 @@
       ],
       "packages": [],
       "lifecycle": "active",
-      "sourceUrl": "https://developers.asana.com/docs/using-asanas-mcp-server",
-      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
-      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence.",
+      "sourceUrl": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Migrated from Nessie CURATED_MCP_LIBRARY and corrected on 2026-11-17 against current vendor documentation. Asana's documentation makes the v2 server at https://mcp.asana.com/v2/mcp generally available, deprecates /sse, and says dynamic client registration is not supported, so clients pre-register an MCP app. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (app.asana.com) lists no registration endpoint. This records the documented connection contract, not test evidence.",
       "nessieApproved": false,
       "madeByNessie": false,
       "reviewPath": null,
@@ -318,15 +318,15 @@
         "vendor": "Cloudflare",
         "websiteUrl": null,
         "repositoryUrl": "https://github.com/cloudflare/mcp-server-cloudflare",
-        "documentationUrl": "https://github.com/cloudflare/mcp-server-cloudflare",
+        "documentationUrl": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
         "categories": [],
         "tags": []
       },
       "remotes": [
         {
           "id": "primary",
-          "transport": "sse",
-          "url": "https://docs.mcp.cloudflare.com/sse",
+          "transport": "http",
+          "url": "https://docs.mcp.cloudflare.com/mcp",
           "auth": {
             "method": "none",
             "headerName": null,
@@ -339,9 +339,9 @@
       ],
       "packages": [],
       "lifecycle": "active",
-      "sourceUrl": "https://github.com/cloudflare/mcp-server-cloudflare",
-      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
-      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled.",
+      "sourceUrl": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Migrated from Nessie CURATED_MCP_LIBRARY and corrected on 2026-11-17: Cloudflare's managed-server documentation lists the documentation server only at https://docs.mcp.cloudflare.com/mcp over Streamable HTTP, and Cloudflare's Registry record declares the same address, so the remote moved from /sse. This records the documented connection contract, not test evidence.",
       "nessieApproved": false,
       "madeByNessie": false,
       "reviewPath": null,
@@ -400,9 +400,9 @@
       "metadata": {
         "name": "stripe",
         "displayName": "Stripe",
-        "description": "Payments, customers, invoices and products via the official Stripe MCP server.",
+        "description": "Read and change Stripe customers, payments, invoices, subscriptions and products, and search Stripe docs.",
         "vendor": "Stripe",
-        "websiteUrl": null,
+        "websiteUrl": "https://stripe.com",
         "repositoryUrl": null,
         "documentationUrl": "https://docs.stripe.com/mcp",
         "categories": [],
@@ -414,10 +414,10 @@
           "transport": "http",
           "url": "https://mcp.stripe.com",
           "auth": {
-            "method": "bearer",
-            "headerName": "Authorization",
-            "valuePrefix": "Bearer ",
-            "hint": "Use a Stripe API key (restricted keys recommended) as the credential.",
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Stripe account and choose the accounts and permissions.",
             "scopes": []
           },
           "version": null
@@ -426,8 +426,8 @@
       "packages": [],
       "lifecycle": "active",
       "sourceUrl": "https://docs.stripe.com/mcp",
-      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
-      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled.",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Migrated from Nessie CURATED_MCP_LIBRARY and corrected on 2026-11-17 against current vendor documentation. Stripe's documentation says to use OAuth when the client supports it, with agent API keys as the alternative, and stops accepting full-access secret keys and untagged restricted keys after 30 November 2026, so the auth moved from bearer to oauth2. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (access.stripe.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
       "nessieApproved": false,
       "madeByNessie": false,
       "reviewPath": null,
@@ -444,11 +444,11 @@
       "metadata": {
         "name": "zapier",
         "displayName": "Zapier",
-        "description": "Trigger and run thousands of app actions through Zapier MCP.",
+        "description": "Run the Zapier actions configured on your Zapier MCP server across connected apps.",
         "vendor": "Zapier",
-        "websiteUrl": null,
+        "websiteUrl": "https://zapier.com",
         "repositoryUrl": null,
-        "documentationUrl": "https://zapier.com/mcp",
+        "documentationUrl": "https://docs.zapier.com/mcp/get-started/connect/other",
         "categories": [],
         "tags": []
       },
@@ -456,12 +456,12 @@
         {
           "id": "primary",
           "transport": "http",
-          "url": "https://mcp.zapier.com/api/mcp/mcp",
+          "url": "https://mcp.zapier.com/api/v1/connect",
           "auth": {
             "method": "bearer",
             "headerName": "Authorization",
             "valuePrefix": "Bearer ",
-            "hint": "Use your Zapier MCP API key (from the Zapier MCP settings page).",
+            "hint": "Generate a connection token on your Zapier MCP server (Settings, API token) and paste it.",
             "scopes": []
           },
           "version": null
@@ -469,9 +469,9 @@
       ],
       "packages": [],
       "lifecycle": "active",
-      "sourceUrl": "https://zapier.com/mcp",
-      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
-      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence.",
+      "sourceUrl": "https://docs.zapier.com/mcp/get-started/connect/other",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Migrated from Nessie CURATED_MCP_LIBRARY and corrected on 2026-11-17 against current vendor documentation. Zapier's documentation for other clients gives https://mcp.zapier.com/api/v1/connect with a connection token as a bearer token, so the remote moved from /api/mcp/mcp. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.zapier.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
       "nessieApproved": false,
       "madeByNessie": false,
       "reviewPath": null,
@@ -530,11 +530,11 @@
       "metadata": {
         "name": "paypal",
         "displayName": "PayPal",
-        "description": "Invoices, payments and disputes via the official PayPal MCP server.",
+        "description": "Create and manage PayPal invoices, orders, payments and disputes.",
         "vendor": "PayPal",
-        "websiteUrl": null,
+        "websiteUrl": "https://www.paypal.com",
         "repositoryUrl": null,
-        "documentationUrl": "https://developer.paypal.com/tools/mcp-server/",
+        "documentationUrl": "https://developer.paypal.com/ai-tools/mcp-server",
         "categories": [],
         "tags": []
       },
@@ -544,10 +544,10 @@
           "transport": "http",
           "url": "https://mcp.paypal.com/mcp",
           "auth": {
-            "method": "bearer",
-            "headerName": "Authorization",
-            "valuePrefix": "Bearer ",
-            "hint": "Use a PayPal access token as the credential.",
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your PayPal account and authorise the connection.",
             "scopes": []
           },
           "version": null
@@ -555,9 +555,9 @@
       ],
       "packages": [],
       "lifecycle": "active",
-      "sourceUrl": "https://developer.paypal.com/tools/mcp-server/",
-      "sourceRevision": "nessie:fb6054de995d28ada3bb2265acb3961d95315cd0",
-      "reason": "Migrated the explicit public remote configuration from Nessie CURATED_MCP_LIBRARY. This is a connection configuration assertion, not new test or approval evidence. Explicitly bound to the matching publisher Registry namespace and component using its declared remote plus the existing vendor documentation; no generic endpoint-only adoption is enabled.",
+      "sourceUrl": "https://developer.paypal.com/ai-tools/mcp-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Migrated from Nessie CURATED_MCP_LIBRARY and corrected on 2026-11-17 against current vendor documentation. PayPal's documentation lists https://mcp.paypal.com/http and PayPal login, but an initialize POST to /http returned 404 while /mcp, which PayPal's Registry record declares, answered with an OAuth challenge, so /mcp was kept and the auth moved from bearer to oauth2. An unauthenticated initialize to /mcp on 2026-11-17 returned 401 with a protected-resource metadata link; that metadata was not fetched. This records the documented connection contract, not test evidence.",
       "nessieApproved": false,
       "madeByNessie": false,
       "reviewPath": null,
@@ -651,6 +651,2166 @@
       "reviewPath": null,
       "authorship": null,
       "legacyLibraryKey": "semgrep"
+    },
+    {
+      "id": "registry:io.github.zoom/zoom-workspace",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.zoom/zoom-workspace"
+      },
+      "metadata": {
+        "name": "zoom",
+        "displayName": "Zoom",
+        "description": "Search meetings, recordings, Zoom Docs and Hub content, and use AI Companion search in Zoom.",
+        "vendor": "Zoom",
+        "websiteUrl": "https://www.zoom.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.zoom.us/docs/mcp/servers/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.zoom.us/mcp/zoom/streamable",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Zoom account. This needs a Zoom OAuth app registered by the Nessie operator.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.zoom.us/docs/mcp/servers/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Zoom's MCP server documentation and Zoom's published server list (github.com/zoom/zoom-plugin-claude) name this Zoom MCP Server endpoint with OAuth 2.1 and PKCE. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (zoom.us) lists no registration endpoint. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:f185c71151959320f0bd762f40e45d44",
+      "identity": {
+        "kind": "remote",
+        "providerId": "dropbox.com",
+        "component": "dropbox"
+      },
+      "metadata": {
+        "name": "dropbox",
+        "displayName": "Dropbox",
+        "description": "Browse, search, read, organise and share files and folders in Dropbox, and work with file requests.",
+        "vendor": "Dropbox",
+        "websiteUrl": "https://www.dropbox.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://help.dropbox.com/integrations/connect-dropbox-mcp-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.dropbox.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Dropbox account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://help.dropbox.com/integrations/connect-dropbox-mcp-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Dropbox's help article gives this endpoint with Dropbox OAuth; supported clients use dynamic client registration and other clients register a Dropbox app. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (www.dropbox.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:374e11f1cdd14fec02c79285091c1ad9",
+      "identity": {
+        "kind": "remote",
+        "providerId": "box.com",
+        "component": "box"
+      },
+      "metadata": {
+        "name": "box",
+        "displayName": "Box",
+        "description": "Search and read files and folders in Box and use Box AI on them.",
+        "vendor": "Box",
+        "websiteUrl": "https://www.box.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developer.box.com/guides/box-mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.box.com",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "A Box admin must enable MCP and issue integration credentials; then sign in with your Box account.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developer.box.com/guides/box-mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Box's developer guide gives this hosted endpoint with OAuth; an admin enables MCP and creates a client ID and secret for custom clients. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (api.box.com) lists no registration endpoint. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:bfddaeeef2bd89898e2f30f8c1265977",
+      "identity": {
+        "kind": "remote",
+        "providerId": "clickup.com",
+        "component": "clickup"
+      },
+      "metadata": {
+        "name": "clickup",
+        "displayName": "ClickUp",
+        "description": "Create and update ClickUp tasks, docs, comments and time entries, and search a workspace.",
+        "vendor": "ClickUp",
+        "websiteUrl": "https://clickup.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.clickup.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your ClickUp account. Personal API keys are not accepted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. ClickUp's developer documentation gives this endpoint with OAuth 2.1 and PKCE only. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.clickup.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:com.monday/monday.com",
+      "identity": {
+        "kind": "registry",
+        "name": "com.monday/monday.com"
+      },
+      "metadata": {
+        "name": "monday-com",
+        "displayName": "monday.com",
+        "description": "Read and update monday.com boards, items, columns, groups and docs.",
+        "vendor": "monday.com",
+        "websiteUrl": "https://monday.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.monday.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your monday.com account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. monday.com's developer documentation gives this Streamable HTTP endpoint with OAuth or a personal API token, and says SSE is no longer supported. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (auth.monday.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:b6cb55c1ab341ff49424b4066ba4891a",
+      "identity": {
+        "kind": "remote",
+        "providerId": "atlassian.com",
+        "component": "trello"
+      },
+      "metadata": {
+        "name": "trello",
+        "displayName": "Trello",
+        "description": "Read, search, create and move Trello boards, lists, cards and checklists in one workspace.",
+        "vendor": "Atlassian",
+        "websiteUrl": "https://trello.com",
+        "repositoryUrl": "https://github.com/atlassian/trello-mcp-server",
+        "documentationUrl": "https://github.com/atlassian/trello-mcp-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.trello.com/v1",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Trello account and pick one workspace for this connection.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://github.com/atlassian/trello-mcp-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Atlassian's official trello-mcp-server repository documents this remote with OAuth 2.0 and one workspace per connection. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (auth.atlassian.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:com.airtable/mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "com.airtable/mcp"
+      },
+      "metadata": {
+        "name": "airtable",
+        "displayName": "Airtable",
+        "description": "Search, create and update records, bases, interfaces and automation drafts in Airtable.",
+        "vendor": "Airtable",
+        "websiteUrl": "https://airtable.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://support.airtable.com/articles/9897799762-Using-the-Airtable-MCP-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.airtable.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Airtable account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://support.airtable.com/articles/9897799762-Using-the-Airtable-MCP-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Airtable's support article gives this endpoint with OAuth (dynamic client registration) or a personal access token. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (airtable.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:3568927749f0f9f92c8b65ca675472a9",
+      "identity": {
+        "kind": "remote",
+        "providerId": "hubspot.com",
+        "component": "hubspot"
+      },
+      "metadata": {
+        "name": "hubspot",
+        "displayName": "HubSpot",
+        "description": "Read and update HubSpot CRM records, activities, content and conversations.",
+        "vendor": "HubSpot",
+        "websiteUrl": "https://www.hubspot.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.hubspot.com",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your HubSpot account. This needs a HubSpot MCP connector app registered by the Nessie operator.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. HubSpot's developer documentation gives this endpoint with OAuth and required PKCE, using a client ID and secret from an MCP connector the integrator creates. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.hubspot.com) lists no registration endpoint. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:688836706f55a16effbcc19c1c1a7f6e",
+      "identity": {
+        "kind": "remote",
+        "providerId": "salesforce.com",
+        "component": "sobject-all"
+      },
+      "metadata": {
+        "name": "salesforce-sobject-all",
+        "displayName": "Salesforce (all objects)",
+        "description": "Create, read, update, delete, query and search standard and custom Salesforce objects.",
+        "vendor": "Salesforce",
+        "websiteUrl": "https://www.salesforce.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/server-urls.html",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://api.salesforce.com/platform/mcp/v1/platform/sobject-all",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "An org admin activates this server and creates an External Client App; then sign in with your Salesforce account.",
+            "scopes": [
+              "mcp_api",
+              "refresh_token"
+            ]
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/server-urls.html",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Salesforce's hosted MCP server guide gives this production URL and requires an External Client App with the mcp_api and refresh scopes; its pages refused automated fetches, so its search excerpts were relied on. An unauthenticated initialize on 2026-11-17 returned 401 without a metadata link; the well-known protected-resource metadata was found; OAuth server metadata for login.salesforce.com was not found at the RFC 8414 path, so dynamic client registration was not seen. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:ed3b21b6162e62e95417447e53e04c11",
+      "identity": {
+        "kind": "remote",
+        "providerId": "pipedrive.com",
+        "component": "pipedrive"
+      },
+      "metadata": {
+        "name": "pipedrive",
+        "displayName": "Pipedrive",
+        "description": "Read and update Pipedrive deals, contacts, leads and activities within your user permissions.",
+        "vendor": "Pipedrive",
+        "websiteUrl": "https://www.pipedrive.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://support.pipedrive.com/en/article/mcp-chatgpt",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.pipedrive.ai/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Pipedrive account and approve the app.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://support.pipedrive.com/en/article/mcp-chatgpt",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Pipedrive's support article gives this endpoint with a Pipedrive sign-in and app approval. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (oauth.pipedrive.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:df5d0805da2ecc67d1e8e057a751d411",
+      "identity": {
+        "kind": "remote",
+        "providerId": "attio.com",
+        "component": "attio"
+      },
+      "metadata": {
+        "name": "attio",
+        "displayName": "Attio",
+        "description": "Read and update Attio CRM records and lists.",
+        "vendor": "Attio",
+        "websiteUrl": "https://attio.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://mcp.attio.com/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.attio.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Attio account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://mcp.attio.com/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Attio's MCP page gives this endpoint with OAuth through an Attio sign-in. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (app.attio.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:com.close/close-mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "com.close/close-mcp"
+      },
+      "metadata": {
+        "name": "close",
+        "displayName": "Close",
+        "description": "Read and update Close leads, contacts, opportunities and activities.",
+        "vendor": "Close",
+        "websiteUrl": "https://www.close.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developer.close.com/mcp/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.close.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Close account and choose the access level.",
+            "scopes": [
+              "mcp.read",
+              "mcp.write_safe",
+              "mcp.write_destructive"
+            ]
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developer.close.com/mcp/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Close's developer documentation gives this endpoint with OAuth 2.0 and dynamic client registration, or an API key with a Close-Scope header. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (api.close.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:io.github.apolloio/apollo-mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.apolloio/apollo-mcp"
+      },
+      "metadata": {
+        "name": "apollo-io",
+        "displayName": "Apollo.io",
+        "description": "Search and enrich people and companies, manage contacts and lists, and run sequences in Apollo.io.",
+        "vendor": "Apollo.io",
+        "websiteUrl": "https://www.apollo.io",
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.apollo.io/docs/apollo-mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.apollo.io/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Apollo account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.apollo.io/docs/apollo-mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Apollo's documentation gives this endpoint with OAuth 2.0 by default and a master API key in X-Api-Key for headless clients. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.apollo.io) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:59b2c4d5a2e430c0309fb2c5f0ca1445",
+      "identity": {
+        "kind": "remote",
+        "providerId": "clay.com",
+        "component": "clay"
+      },
+      "metadata": {
+        "name": "clay",
+        "displayName": "Clay",
+        "description": "Run Clay's find-and-enrich tools and custom functions in a chosen workspace.",
+        "vendor": "Clay",
+        "websiteUrl": "https://www.clay.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://university.clay.com/docs/connect-to-clay-mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://api.clay.com/v3/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Clay account. A workspace admin must allow unlisted MCP clients.",
+            "scopes": [
+              "mcp"
+            ]
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://university.clay.com/docs/connect-to-clay-mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Clay's documentation gives this endpoint with OAuth 2.0, required PKCE and open dynamic client registration, scope mcp. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (api.clay.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:56452d48d983cf0a0e51b908a54e4f36",
+      "identity": {
+        "kind": "remote",
+        "providerId": "intercom.com",
+        "component": "intercom"
+      },
+      "metadata": {
+        "name": "intercom",
+        "displayName": "Intercom",
+        "description": "Search Intercom conversations, contacts and companies, manage Help Center articles and add internal notes.",
+        "vendor": "Intercom",
+        "websiteUrl": "https://www.intercom.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.intercom.com/docs/guides/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.intercom.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Intercom account. This address is for US-hosted workspaces; EU workspaces use mcp.eu.intercom.com.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.intercom.com/docs/guides/mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Intercom's developer documentation gives this US Streamable HTTP endpoint (EU: https://mcp.eu.intercom.com/mcp) with OAuth or an API token as a bearer token. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.intercom.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:9d851e7755e8ab080e55abf15e0fa5fd",
+      "identity": {
+        "kind": "remote",
+        "providerId": "gong.io",
+        "component": "gong"
+      },
+      "metadata": {
+        "name": "gong",
+        "displayName": "Gong",
+        "description": "Search and read Gong calls, deals and conversation data within the granted scopes.",
+        "vendor": "Gong",
+        "websiteUrl": "https://www.gong.io",
+        "repositoryUrl": null,
+        "documentationUrl": "https://help.gong.io/docs/create-an-integration-to-connect-to-the-mcp-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.gong.io/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "A Gong tech admin must register the integration first; then sign in with a paid Gong seat.",
+            "scopes": [
+              "mcp:read",
+              "mcp:write"
+            ]
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://help.gong.io/docs/create-an-integration-to-connect-to-the-mcp-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Gong's help center gives this endpoint with OAuth; a tech admin registers the integration manually or allows automatic registration, with scopes mcp:read and mcp:write. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.gong.io) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:ai.fireflies/fireflies",
+      "identity": {
+        "kind": "registry",
+        "name": "ai.fireflies/fireflies"
+      },
+      "metadata": {
+        "name": "fireflies",
+        "displayName": "Fireflies.ai",
+        "description": "Search and read Fireflies meeting transcripts, summaries and action items.",
+        "vendor": "Fireflies.ai",
+        "websiteUrl": "https://fireflies.ai",
+        "repositoryUrl": null,
+        "documentationUrl": "https://guide.fireflies.ai/articles/3039542843-learn-about-fireflies-mcp-server-connect-your-ai-tool",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://api.fireflies.ai/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Fireflies account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://guide.fireflies.ai/articles/3039542843-learn-about-fireflies-mcp-server-connect-your-ai-tool",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Fireflies' guide gives this endpoint with OAuth through a Fireflies sign-in. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (api.fireflies.ai) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:e715f3b3809ded3f7453af89e00c57dc",
+      "identity": {
+        "kind": "remote",
+        "providerId": "calendly.com",
+        "component": "calendly"
+      },
+      "metadata": {
+        "name": "calendly",
+        "displayName": "Calendly",
+        "description": "List event types, find open slots, book and cancel events, and create scheduling links in Calendly.",
+        "vendor": "Calendly",
+        "websiteUrl": "https://calendly.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developer.calendly.com/docs/mcp/calendly-mcp-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.calendly.com",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Calendly account. Personal access tokens are not accepted.",
+            "scopes": [
+              "mcp:scheduling:read",
+              "mcp:scheduling:write"
+            ]
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developer.calendly.com/docs/mcp/calendly-mcp-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Calendly's developer documentation gives this endpoint with OAuth 2.1, PKCE and required dynamic client registration. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (calendly.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:a7c071a96c720edf1c4e88154fd3374c",
+      "identity": {
+        "kind": "remote",
+        "providerId": "docusign.com",
+        "component": "docusign"
+      },
+      "metadata": {
+        "name": "docusign",
+        "displayName": "Docusign",
+        "description": "Work with Docusign agreements and envelopes from an agent session.",
+        "vendor": "Docusign",
+        "websiteUrl": "https://www.docusign.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.docusign.com/platform/mcp-server/custom-connectors",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.docusign.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Docusign account. This needs a Docusign integration key registered by the Nessie operator.",
+            "scopes": [
+              "signature",
+              "adm_store_unified_repo_read",
+              "aow_manage",
+              "cors",
+              "spring_read",
+              "spring_write"
+            ]
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.docusign.com/platform/mcp-server/custom-connectors",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Docusign's developer documentation gives this production endpoint (demo: https://mcp-d.docusign.com/mcp) and requires an integration key, client secret and redirect URI. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.docusign.com) lists no registration endpoint. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:com.pandadoc.mcp/mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "com.pandadoc.mcp/mcp"
+      },
+      "metadata": {
+        "name": "pandadoc",
+        "displayName": "PandaDoc",
+        "description": "Create documents from templates, track signatures and send reminders in PandaDoc.",
+        "vendor": "PandaDoc",
+        "websiteUrl": "https://www.pandadoc.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.pandadoc.com/docs/getting-started-with-mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.pandadoc.com/v1/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your PandaDoc account. This address is for global accounts; EU accounts use mcp.pandadoc.eu.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.pandadoc.com/docs/getting-started-with-mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. PandaDoc's developer documentation gives this global endpoint (EU: https://mcp.pandadoc.eu/v1/mcp) with OAuth. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.pandadoc.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:com.typeform/typeform",
+      "identity": {
+        "kind": "registry",
+        "name": "com.typeform/typeform"
+      },
+      "metadata": {
+        "name": "typeform",
+        "displayName": "Typeform",
+        "description": "Build and edit forms, pages, themes, automations and contacts, and analyse responses in Typeform.",
+        "vendor": "Typeform",
+        "websiteUrl": "https://www.typeform.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://www.typeform.com/developers/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://api.typeform.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Typeform account. EU-hosted accounts use a different address.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://www.typeform.com/developers/mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Typeform's developer documentation gives this Streamable HTTP endpoint with OAuth 2.0. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (api.typeform.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:com.gitlab/mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "com.gitlab/mcp"
+      },
+      "metadata": {
+        "name": "gitlab",
+        "displayName": "GitLab",
+        "description": "Read GitLab projects, issues, merge requests and pipelines and call GitLab APIs within your permissions.",
+        "vendor": "GitLab",
+        "websiteUrl": "https://about.gitlab.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.gitlab.com/user/model_context_protocol/mcp_server/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://gitlab.com/api/v4/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your GitLab account. MCP access must be allowed for the top-level group.",
+            "scopes": [
+              "mcp"
+            ]
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.gitlab.com/user/model_context_protocol/mcp_server/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. GitLab's documentation gives this GitLab.com endpoint with OAuth (dynamic or pre-registered client, scope mcp) or a fine-grained personal access token. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (gitlab.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:ac75953bb624fd74ea1445860fb90157",
+      "identity": {
+        "kind": "remote",
+        "providerId": "microsoft.com",
+        "component": "azure-devops"
+      },
+      "metadata": {
+        "name": "azure-devops",
+        "displayName": "Azure DevOps",
+        "description": "Read and update Azure DevOps work items, repositories, pull requests, pipelines, wikis and test plans.",
+        "vendor": "Microsoft",
+        "websiteUrl": "https://azure.microsoft.com/products/devops",
+        "repositoryUrl": null,
+        "documentationUrl": "https://learn.microsoft.com/en-us/azure/devops/mcp-server/remote-mcp-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.dev.azure.com/",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with a Microsoft Entra work account. This needs an Entra app registered by the Nessie operator.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://learn.microsoft.com/en-us/azure/devops/mcp-server/remote-mcp-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Microsoft's remote Azure DevOps MCP Server page documents this address without an organization (the organization is then named in each tool call) and Entra ID OAuth; Entra does not support dynamic client registration. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; OAuth server metadata for login.microsoftonline.com was not found at the RFC 8414 path, so dynamic client registration was not seen. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:4bb815556461a860751b7e4542772e47",
+      "identity": {
+        "kind": "remote",
+        "providerId": "datadoghq.com",
+        "component": "datadog"
+      },
+      "metadata": {
+        "name": "datadog",
+        "displayName": "Datadog",
+        "description": "Query Datadog logs, metrics, traces, monitors, incidents and dashboards.",
+        "vendor": "Datadog",
+        "websiteUrl": "https://www.datadoghq.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.datadoghq.com/mcp_server/setup/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.datadoghq.com/v1/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Datadog account. This address is for the US1 site; other sites use mcp.<site>/v1/mcp.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.datadoghq.com/mcp_server/setup/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Datadog's setup page gives this US1 endpoint with OAuth recommended and API plus application keys for headless use; redirect URLs can be allow-listed in Organization Settings. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.datadoghq.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:com.newrelic/mcp-server",
+      "identity": {
+        "kind": "registry",
+        "name": "com.newrelic/mcp-server"
+      },
+      "metadata": {
+        "name": "new-relic",
+        "displayName": "New Relic",
+        "description": "Query New Relic observability data and manage alerts and dashboards.",
+        "vendor": "New Relic",
+        "websiteUrl": "https://newrelic.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.newrelic.com/docs/agentic-ai/mcp/setup/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.newrelic.com/mcp/",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your New Relic account. EU and JP accounts use their regional address.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.newrelic.com/docs/agentic-ai/mcp/setup/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. New Relic's setup page gives the US endpoint with a trailing slash and OAuth as the default; the Registry record omits the slash and declares an API key, and the documentation was followed. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (oauth2.service.newrelic.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:io.github.grafana/mcp-grafana",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.grafana/mcp-grafana"
+      },
+      "metadata": {
+        "name": "grafana",
+        "displayName": "Grafana Cloud",
+        "description": "Read Grafana Cloud dashboards, alerts and incidents, and query metrics, logs, traces and profiles.",
+        "vendor": "Grafana Labs",
+        "websiteUrl": "https://grafana.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://grafana.com/docs/grafana-cloud/ai-tools/mcp-servers/cloud-mcp/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.grafana.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Grafana Cloud account. You need the Assistant Cloud MCP User role.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://grafana.com/docs/grafana-cloud/ai-tools/mcp-servers/cloud-mcp/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Grafana's Cloud MCP documentation gives this Streamable HTTP endpoint with OAuth 2.1, user-scoped by Grafana RBAC. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.grafana.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:1ea0176cb0f153d0436ba5e2272f4c31",
+      "identity": {
+        "kind": "remote",
+        "providerId": "pagerduty.com",
+        "component": "pagerduty"
+      },
+      "metadata": {
+        "name": "pagerduty",
+        "displayName": "PagerDuty",
+        "description": "Read and update PagerDuty incidents, services, schedules and on-call data.",
+        "vendor": "PagerDuty",
+        "websiteUrl": "https://www.pagerduty.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.pagerduty.com/developer/mcp-tooling-remote-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.pagerduty.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your PagerDuty account. This needs a PagerDuty OAuth app registered by the Nessie operator.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.pagerduty.com/developer/mcp-tooling-remote-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. PagerDuty's developer documentation gives this endpoint with the REST API's methods: OAuth or an API token sent as Token token=<key>. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (app.pagerduty.com) lists no registration endpoint. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:io.github.PostHog/mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.PostHog/mcp"
+      },
+      "metadata": {
+        "name": "posthog",
+        "displayName": "PostHog",
+        "description": "Query PostHog analytics, triage errors, and manage feature flags and experiments.",
+        "vendor": "PostHog",
+        "websiteUrl": "https://posthog.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://posthog.com/docs/model-context-protocol",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.posthog.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your PostHog account; it routes you to your US or EU region.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://posthog.com/docs/model-context-protocol",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. PostHog's documentation gives this single endpoint for both regions and routes sign-in to the account's region. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (oauth.posthog.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:305ac44d95f791308141268aee671b10",
+      "identity": {
+        "kind": "remote",
+        "providerId": "launchdarkly.com",
+        "component": "launchdarkly"
+      },
+      "metadata": {
+        "name": "launchdarkly",
+        "displayName": "LaunchDarkly",
+        "description": "Manage LaunchDarkly feature flags, approvals, experiments and releases, and read observability data.",
+        "vendor": "LaunchDarkly",
+        "websiteUrl": "https://launchdarkly.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://launchdarkly.com/docs/home/getting-started/mcp-hosted",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.launchdarkly.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your LaunchDarkly account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://launchdarkly.com/docs/home/getting-started/mcp-hosted",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. LaunchDarkly's hosted MCP documentation gives this endpoint with OAuth recommended; it is not available in federal or EU environments. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (app.launchdarkly.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:com.figma.mcp/mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "com.figma.mcp/mcp"
+      },
+      "metadata": {
+        "name": "figma",
+        "displayName": "Figma",
+        "description": "Read Figma files and design context, generate code from frames, and write content to the canvas.",
+        "vendor": "Figma",
+        "websiteUrl": "https://www.figma.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.figma.com/docs/figma-mcp-server/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.figma.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Figma account. Figma admits new MCP clients through a waitlist.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.figma.com/docs/figma-mcp-server/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Figma's developer documentation gives this remote endpoint and asks developers of new MCP clients to join a waitlist. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (api.figma.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:io.github.miroapp/mcp-server",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.miroapp/mcp-server"
+      },
+      "metadata": {
+        "name": "miro",
+        "displayName": "Miro",
+        "description": "Read and summarise Miro boards and create frames, notes, shapes, docs, tables and diagrams on them.",
+        "vendor": "Miro",
+        "websiteUrl": "https://miro.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.miro.com",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Miro account and pick the team that holds your boards.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Miro's FAQ gives this endpoint with OAuth 2.1 and dynamic client registration; Enterprise admins must enable MCP. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.miro.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:d462e7a78913301e7e9d321c3cade305",
+      "identity": {
+        "kind": "remote",
+        "providerId": "canva.com",
+        "component": "connect-mcp"
+      },
+      "metadata": {
+        "name": "canva",
+        "displayName": "Canva",
+        "description": "Search, create, edit, resize and export Canva designs, assets, folders and brand templates.",
+        "vendor": "Canva",
+        "websiteUrl": "https://www.canva.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://www.canva.dev/docs/apps/quickstart/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://api.canva.com/connect/v1/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Canva account. This needs a Canva app with MCP enabled, registered by the Nessie operator.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://www.canva.dev/docs/apps/quickstart/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Canva's developer quickstart names https://api.canva.com/connect/v1/mcp and requires a Developer Portal app with Canva MCP turned on and its client ID and secret; the Registry's com.canva.mcp/mcp record declares the separate mcp.canva.com server. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (www.canva.com) lists no registration endpoint. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:com.webflow/mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "com.webflow/mcp"
+      },
+      "metadata": {
+        "name": "webflow",
+        "displayName": "Webflow",
+        "description": "Read and change Webflow sites, pages, collections and CMS items.",
+        "vendor": "Webflow",
+        "websiteUrl": "https://webflow.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.webflow.com/mcp/reference/getting-started",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.webflow.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Webflow account and choose the sites to share.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.webflow.com/mcp/reference/getting-started",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Webflow's MCP documentation gives this endpoint with OAuth for selected sites. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.webflow.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:com.supabase/mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "com.supabase/mcp"
+      },
+      "metadata": {
+        "name": "supabase",
+        "displayName": "Supabase",
+        "description": "Manage Supabase projects, run SQL, apply migrations, read logs and deploy Edge Functions.",
+        "vendor": "Supabase",
+        "websiteUrl": "https://supabase.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://supabase.com/docs/guides/ai-tools/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.supabase.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Supabase account and choose the organization.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://supabase.com/docs/guides/ai-tools/mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Supabase's documentation gives this endpoint with OAuth through dynamic client registration by default, or a personal access token as a bearer token. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (api.supabase.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:com.neon/mcp",
+      "identity": {
+        "kind": "registry",
+        "name": "com.neon/mcp"
+      },
+      "metadata": {
+        "name": "neon",
+        "displayName": "Neon",
+        "description": "Manage Neon projects, branches and compute, and run SQL against Neon Postgres.",
+        "vendor": "Neon",
+        "websiteUrl": "https://neon.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://neon.com/docs/ai/neon-mcp-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.neon.tech/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Neon account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://neon.com/docs/ai/neon-mcp-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Neon's documentation gives this Streamable HTTP endpoint with OAuth or a Neon API key as a bearer token; the SSE routes return 410. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.neon.tech) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:25753bb6351f0c3a2a3d1fbb243424c7",
+      "identity": {
+        "kind": "remote",
+        "providerId": "mongodb.com",
+        "component": "atlas-managed-mcp"
+      },
+      "metadata": {
+        "name": "mongodb-atlas",
+        "displayName": "MongoDB Atlas",
+        "description": "Query and manage data in MongoDB Atlas deployments with the roles an administrator grants.",
+        "vendor": "MongoDB",
+        "websiteUrl": "https://www.mongodb.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://www.mongodb.com/docs/mcp-server/overview/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.mongodb.com",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Atlas account through Atlas App Connections, or use a service account an Atlas owner creates.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://www.mongodb.com/docs/mcp-server/overview/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. MongoDB's documentation gives https://mcp.mongodb.com as the Atlas Managed MCP Server URL with user-delegated Atlas App Connections or OAuth client-credentials service accounts. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (authorize.mongodb.com) lists no registration endpoint. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:b666b661c65edba4371c6fd648c35e02",
+      "identity": {
+        "kind": "remote",
+        "providerId": "googleapis.com",
+        "component": "bigquery"
+      },
+      "metadata": {
+        "name": "google-bigquery",
+        "displayName": "Google BigQuery",
+        "description": "List BigQuery datasets and tables, read their metadata and run SQL queries.",
+        "vendor": "Google",
+        "websiteUrl": "https://cloud.google.com/bigquery",
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://bigquery.googleapis.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with a Google Cloud identity that has MCP Tool User and BigQuery roles. This needs a Google OAuth client registered by the Nessie operator.",
+            "scopes": [
+              "https://www.googleapis.com/auth/bigquery"
+            ]
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Google's BigQuery MCP guide gives this Streamable HTTP endpoint with OAuth 2.0 and IAM, enabled with the BigQuery API. An unauthenticated initialize on 2026-11-17 returned 200 with no authentication challenge. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:3877deb60d053a8bc77cb4822d679778",
+      "identity": {
+        "kind": "remote",
+        "providerId": "aws.amazon.com",
+        "component": "aws-mcp-server"
+      },
+      "metadata": {
+        "name": "aws",
+        "displayName": "Amazon Web Services",
+        "description": "Search AWS documentation and call AWS APIs in your account through the managed AWS MCP Server.",
+        "vendor": "Amazon Web Services",
+        "websiteUrl": "https://aws.amazon.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.aws.amazon.com/agent-toolkit/latest/userguide/getting-started-aws-mcp-server.html",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://aws-mcp.eu-west-2.api.aws/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with AWS. Your IAM role or user needs the AWSMCPSignInOAuthAccessPolicy. This address is the London region.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.aws.amazon.com/agent-toolkit/latest/userguide/getting-started-aws-mcp-server.html",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. AWS's setup guide lists this Europe (London) endpoint among eight regional ones and documents OAuth sign-in or SigV4 through a local proxy. An unauthenticated initialize on 2026-11-17 returned 200 with no authentication challenge. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:76c5046111e5b0a0d46f799f82d904b0",
+      "identity": {
+        "kind": "remote",
+        "providerId": "microsoft.com",
+        "component": "azure-resource-manager"
+      },
+      "metadata": {
+        "name": "azure-resource-manager",
+        "displayName": "Microsoft Azure",
+        "description": "Query Azure resources, preview and deploy ARM templates, update resources and read costs.",
+        "vendor": "Microsoft",
+        "websiteUrl": "https://azure.microsoft.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-resource-manager-mcp-overview",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.management.azure.com",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with a Microsoft Entra account. This needs an Entra app registered by the Nessie operator.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-resource-manager-mcp-overview",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Microsoft's ARM MCP server documentation uses the signed-in Entra user's Azure permissions and says clients without built-in Entra support need an app registration. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; OAuth server metadata for login.microsoftonline.com was not found at the RFC 8414 path, so dynamic client registration was not seen. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:9dc6987a3ae7da9faca948246c349239",
+      "identity": {
+        "kind": "remote",
+        "providerId": "googleapis.com",
+        "component": "cloudcli"
+      },
+      "metadata": {
+        "name": "google-cloud-cli",
+        "displayName": "Google Cloud",
+        "description": "Run gcloud and bq commands against a Google Cloud project with your IAM permissions.",
+        "vendor": "Google",
+        "websiteUrl": "https://cloud.google.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.cloud.google.com/sdk/use-gcloud-mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://cloudcli.googleapis.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with a Google Cloud identity that has the MCP Tool User role. This needs a Google OAuth client registered by the Nessie operator.",
+            "scopes": [
+              "https://www.googleapis.com/auth/cloud-platform"
+            ]
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.cloud.google.com/sdk/use-gcloud-mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Google's gcloud MCP guide gives this Streamable HTTP endpoint with OAuth 2.0 and IAM and says API keys are not accepted. An unauthenticated initialize on 2026-11-17 returned 200 with no authentication challenge. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:28fa8447939de433fd0c4f20159df7f1",
+      "identity": {
+        "kind": "remote",
+        "providerId": "cloudflare.com",
+        "component": "cloudflare-api"
+      },
+      "metadata": {
+        "name": "cloudflare",
+        "displayName": "Cloudflare",
+        "description": "Search and call the whole Cloudflare API and search Cloudflare documentation.",
+        "vendor": "Cloudflare",
+        "websiteUrl": "https://www.cloudflare.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.cloudflare.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Cloudflare account and choose the permissions.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Cloudflare's documentation gives this Cloudflare API MCP server with OAuth, or a Cloudflare API token as a bearer token for automation. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.cloudflare.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:e0bb53377698577e932deb96dbc1b51a",
+      "identity": {
+        "kind": "remote",
+        "providerId": "brevo.com",
+        "component": "brevo"
+      },
+      "metadata": {
+        "name": "brevo",
+        "displayName": "Brevo",
+        "description": "Manage Brevo contacts, lists, campaigns, templates and CRM deals.",
+        "vendor": "Brevo",
+        "websiteUrl": "https://www.brevo.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.brevo.com/docs/mcp-protocol",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.brevo.com/v1/brevo/mcp",
+          "auth": {
+            "method": "bearer",
+            "headerName": "Authorization",
+            "valuePrefix": "Bearer ",
+            "hint": "Paste a Brevo API key created with the MCP option turned on.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.brevo.com/docs/mcp-protocol",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Brevo's developer documentation gives this all-modules endpoint with an MCP-enabled API key sent as a bearer token and does not mention OAuth. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.brevo.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:2e5339cf0121504ada52b3b57a3d6c25",
+      "identity": {
+        "kind": "remote",
+        "providerId": "klaviyo.com",
+        "component": "klaviyo"
+      },
+      "metadata": {
+        "name": "klaviyo",
+        "displayName": "Klaviyo",
+        "description": "Query and update Klaviyo account data such as profiles, lists, campaigns and flows.",
+        "vendor": "Klaviyo",
+        "websiteUrl": "https://www.klaviyo.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.klaviyo.com/en/docs/connect_to_the_klaviyo_mcp_server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.klaviyo.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with a Klaviyo user who has the Owner, Admin or Manager role.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.klaviyo.com/en/docs/connect_to_the_klaviyo_mcp_server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Klaviyo's developer documentation gives this endpoint with OAuth and dynamic client registration. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.klaviyo.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:be26571c6f69101abf956e77e701d95c",
+      "identity": {
+        "kind": "remote",
+        "providerId": "facebook.com",
+        "component": "ads-mcp"
+      },
+      "metadata": {
+        "name": "meta-ads",
+        "displayName": "Meta Ads",
+        "description": "List ad accounts, create and edit campaigns and ad sets, and report on ad performance in Meta Ads.",
+        "vendor": "Meta",
+        "websiteUrl": "https://www.facebook.com/business/ads",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-get-started",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.facebook.com/ads",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with Facebook Login for Business and approve the ads permissions.",
+            "scopes": [
+              "ads_mcp_management",
+              "ads_read"
+            ]
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-get-started",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Meta's Ads MCP server guide gives this endpoint with Facebook Login for Business OAuth, user tokens or employee system-user tokens, and minimum permissions ads_mcp_management plus ads_read or ads_management. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (www.facebook.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:io.github.integromat/make",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.integromat/make"
+      },
+      "metadata": {
+        "name": "make",
+        "displayName": "Make",
+        "description": "Build, run and debug Make automation scenarios.",
+        "vendor": "Make",
+        "websiteUrl": "https://www.make.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developers.make.com/mcp-server/connect-using-oauth",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.make.com/v2",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Make account and choose the organization and scopes.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developers.make.com/mcp-server/connect-using-oauth",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Make's developer documentation gives https://mcp.make.com/v2 for OAuth; this Registry record from Make's integromat namespace declares that address, while com.make/mcp-server declares the root URL. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (www.make.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:1c038cca10e8cba4929b33b2b39d6479",
+      "identity": {
+        "kind": "remote",
+        "providerId": "tavily.com",
+        "component": "tavily"
+      },
+      "metadata": {
+        "name": "tavily",
+        "displayName": "Tavily",
+        "description": "Search the web, extract and crawl pages, and run multi-source research with Tavily.",
+        "vendor": "Tavily",
+        "websiteUrl": "https://www.tavily.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.tavily.com/documentation/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.tavily.com/mcp/",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Tavily account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.tavily.com/documentation/mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Tavily's documentation gives this endpoint with OAuth recommended, or an API key, and limited keyless search and extract. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (mcp.tavily.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:ai.exa/exa",
+      "identity": {
+        "kind": "registry",
+        "name": "ai.exa/exa"
+      },
+      "metadata": {
+        "name": "exa",
+        "displayName": "Exa",
+        "description": "Search the web, code, news, companies and papers, and read pages as clean text with Exa.",
+        "vendor": "Exa",
+        "websiteUrl": "https://exa.ai",
+        "repositoryUrl": null,
+        "documentationUrl": "https://exa.ai/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.exa.ai/mcp",
+          "auth": {
+            "method": "none",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Works without a key.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://exa.ai/mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Exa's MCP page says no API key is required for this endpoint. An unauthenticated initialize on 2026-11-17 returned 200 with no authentication challenge. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:io.github.firecrawl/firecrawl-mcp-server",
+      "identity": {
+        "kind": "registry",
+        "name": "io.github.firecrawl/firecrawl-mcp-server"
+      },
+      "metadata": {
+        "name": "firecrawl",
+        "displayName": "Firecrawl",
+        "description": "Search, scrape, crawl and extract structured data from websites with Firecrawl.",
+        "vendor": "Firecrawl",
+        "websiteUrl": "https://www.firecrawl.dev",
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.firecrawl.dev/mcp-server",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.firecrawl.dev/v2/mcp-oauth",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Firecrawl account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.firecrawl.dev/mcp-server",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Firecrawl's documentation gives /v2/mcp-oauth for OAuth sign-in and /v2/mcp for API-key bearer access; the Registry record declares /v2/mcp, and the OAuth address was chosen as primary. An unauthenticated initialize on 2026-11-17 returned 401 with a protected-resource metadata link; its authorization server (www.firecrawl.dev) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "registry:com.apify/apify-mcp-server",
+      "identity": {
+        "kind": "registry",
+        "name": "com.apify/apify-mcp-server"
+      },
+      "metadata": {
+        "name": "apify",
+        "displayName": "Apify",
+        "description": "Find and run Apify Actors, read their results, and manage runs, storage and schedules.",
+        "vendor": "Apify",
+        "websiteUrl": "https://apify.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://docs.apify.com/mcp",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://mcp.apify.com",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Apify account when prompted.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://docs.apify.com/mcp",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "Curated for the vendor Registry record of this server. Apify's documentation gives this endpoint with OAuth recommended, or an Apify API token as a bearer token. An unauthenticated initialize on 2026-11-17 returned 401 without a metadata link; the well-known protected-resource metadata was found; its authorization server (console-backend.apify.com) offers dynamic client registration. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
+    },
+    {
+      "id": "remote:985225227b1e1a6cb301315046f9b187",
+      "identity": {
+        "kind": "remote",
+        "providerId": "deel.com",
+        "component": "deel"
+      },
+      "metadata": {
+        "name": "deel",
+        "displayName": "Deel",
+        "description": "Read Deel organization and worker data and act on supported Deel operations for the signed-in user.",
+        "vendor": "Deel",
+        "websiteUrl": "https://www.deel.com",
+        "repositoryUrl": null,
+        "documentationUrl": "https://developer.deel.com/mcp/introduction",
+        "categories": [],
+        "tags": []
+      },
+      "remotes": [
+        {
+          "id": "primary",
+          "transport": "http",
+          "url": "https://api.letsdeel.com/mcp",
+          "auth": {
+            "method": "oauth2",
+            "headerName": null,
+            "valuePrefix": null,
+            "hint": "Sign in with your Deel account. Clients without OAuth can use a Deel personal access token.",
+            "scopes": []
+          },
+          "version": null
+        }
+      ],
+      "packages": [],
+      "lifecycle": "active",
+      "sourceUrl": "https://developer.deel.com/mcp/introduction",
+      "sourceRevision": "vendor-docs:2026-11-17",
+      "reason": "No source observation is the vendor's own record of this server, so it is curated under a remote identity. Deel's developer documentation gives this endpoint with an OAuth2 application recommended, or a personal access token. An unauthenticated initialize on 2026-11-17 returned 200 with no authentication challenge. This records the documented connection contract, not test evidence.",
+      "nessieApproved": false,
+      "madeByNessie": false,
+      "reviewPath": null,
+      "authorship": null
     }
   ]
 }
