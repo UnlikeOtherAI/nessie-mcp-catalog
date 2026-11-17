@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "publisher": "UnlikeOtherAI/nessie-mcp-catalog",
-  "sequence": 6,
-  "generatedAt": "2026-10-16T03:35:16.229Z",
+  "sequence": 7,
+  "generatedAt": "2026-11-17T10:31:57.000Z",
   "complete": true,
   "catalogPath": "dist/catalog.json",
-  "catalogSha256": "80e0db12d9728f4ea1ca47bf73f8cffad24e8b6e98c71d0f3a7c24eb5d09293a",
-  "entryCount": 44493,
+  "catalogSha256": "fa0bc3569373d28b05716afdcee869b59504ae12b8ea0fea989a6bd332c4e48d",
+  "entryCount": 44522,
   "sourceSnapshots": [
     {
       "id": "official-registry",
